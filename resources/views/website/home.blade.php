@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('website.layout')
 @section('title', 'Home')
 @section('content')
 
@@ -58,41 +58,41 @@
                 <a class="block-2-item" href="#">
                     <figure class="image">
                         <img src="{{ asset('assets/images/women.jpg')}}" alt="" class="img-fluid">
-    </figure>
-    <div class="text">
-        <span class="text-uppercase">Collections</span>
-        <h3>Women</h3>
+                    </figure>
+                    <div class="text">
+                        <span class="text-uppercase">Collections</span>
+                        <h3>Women</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
+                <a class="block-2-item" href="#">
+                    <figure class="image">
+                        <img src="{{ asset('assets/images/children.jpg')}}" alt="" class="img-fluid">
+                    </figure>
+                    <div class="text">
+                        <span class="text-uppercase">Collections</span>
+                        <h3>Children</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
+                <a class="block-2-item" href="#">
+                    <figure class="image">
+                        <img src="{{ asset('assets/images/men.jpg')}}" alt="" class="img-fluid">
+                    </figure>
+                    <div class="text">
+                        <span class="text-uppercase">Collections</span>
+                        <h3>Men</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
-    </a>
-</div>
-<div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
-    <a class="block-2-item" href="#">
-        <figure class="image">
-            <img src="{{ asset('assets/images/children.jpg')}}" alt="" class="img-fluid">
-        </figure>
-        <div class="text">
-            <span class="text-uppercase">Collections</span>
-            <h3>Children</h3>
-        </div>
-    </a>
-</div>
-<div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
-    <a class="block-2-item" href="#">
-        <figure class="image">
-            <img src="{{ asset('assets/images/men.jpg')}}" alt="" class="img-fluid">
-        </figure>
-        <div class="text">
-            <span class="text-uppercase">Collections</span>
-            <h3>Men</h3>
-        </div>
-    </a>
-</div>
-</div>
-</div>
 </div>
 
 <div class="site-section block-3 site-blocks-2 bg-light">
-    @include('components.feature-products')
+    @include('website.components.feature-products')
 </div>
 
 <div class="site-section block-8">
