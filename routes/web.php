@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ShopController;
-use App\Http\Controllers\ThanksController;
+use App\Http\Controllers\website\CartController;
+use App\Http\Controllers\website\HomeController;
+use App\Http\Controllers\website\ShopController;
+use App\Http\Controllers\website\ThanksController;
 
 /*
 |--------------------------------------------------------------------------
