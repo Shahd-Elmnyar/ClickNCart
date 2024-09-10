@@ -25,8 +25,18 @@
                                         <span class="icon icon-person"></span>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                                        @guest
+                                        <a class="dropdown-item" href="{{ url('register') }}">register </a>
+                                        <a class="dropdown-item" href="{{ url('login') }}">Login </a>
+                                        @endguest
+                                        @auth
                                         <a class="dropdown-item" href="{{ url('profile') }}">shahd elmnyar</a>
-                                        <a class="dropdown-item" href="{{ url('logout') }}">Logout</a>
+                                        <!-- <a class="dropdown-item" href="{{ url('logout') }}">Logout</a> -->
+                                        <form method="POST" action="{{ route('logout') }}">
+                                            @csrf
+                                            <button type="submit" class=" dropdown-item">Logout</button>
+                                        </form>
+                                        @endauth
                                     </div>
                                 </li>
                                 <li><a href="#"><span class="icon icon-heart-o"></span></a></li>

@@ -15,6 +15,6 @@ use App\Http\Controllers\Admin\HomeController;
 */
 
 
-Route::middleware('lang')->group(function () {
+Route::middleware('lang', 'admin')->group(function () {
     Route::get('/', [HomeController::class, 'index']);
 });
