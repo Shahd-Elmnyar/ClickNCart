@@ -2,9 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\website\CartController;
-use App\Http\Controllers\website\HomeController;
+// use App\Http\Controllers\website\HomeController;//uncommented
 use App\Http\Controllers\website\ShopController;
 use App\Http\Controllers\website\ThanksController;
+use App\Http\Controllers\Admin\HomeController;//remove it
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +23,9 @@ Route::get('shop-single',[ShopController::class,'index']);
 Route::get('cart',[CartController::class,'index']);
 Route::get('',[HomeController::class,'index']);
 Route::get('thankyou',[ThanksController::class,'index']);
+
+///remove ///
+Route::middleware([])->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('admin.index');
+    ;
+});

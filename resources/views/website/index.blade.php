@@ -1,7 +1,7 @@
 @extends('website.layout')
 @section('title', 'Home')
 @section('content')
-
+<a href="{{ route('admin.index') }}">View Admin Dashboard</a>
 <div class="site-blocks-cover" style="background-image: url('{{ asset('assets/images/hero_1.jpg') }}');" data-aos="fade">
     <div class="container">
         <div class="row align-items-start align-items-md-center justify-content-end">
