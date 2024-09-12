@@ -30,7 +30,11 @@
                                         <a class="dropdown-item" href="{{ url('login') }}">Login </a>
                                         @endguest
                                         @auth
+
                                         <a class="dropdown-item" href="{{ url('profile') }}">shahd elmnyar</a>
+                                        @if(Auth::user()->role != 'user')
+                                        <a class="dropdown-item" href="{{ url('admin') }}">Dashboard</a>
+                                        @endif
                                         <!-- <a class="dropdown-item" href="{{ url('logout') }}">Logout</a> -->
                                         <form method="POST" action="{{ route('logout') }}">
                                             @csrf

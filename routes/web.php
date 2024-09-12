@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\website\HomeController;
 use App\Http\Controllers\website\CartController;
-// use App\Http\Controllers\website\HomeController;//uncommented
 use App\Http\Controllers\website\ShopController;
 use App\Http\Controllers\website\ThanksController;
-use App\Http\Controllers\Admin\HomeController;//remove it
+
 
 
 /*
@@ -24,8 +25,23 @@ Route::get('cart',[CartController::class,'index']);
 Route::get('',[HomeController::class,'index']);
 Route::get('thankyou',[ThanksController::class,'index']);
 
-///remove ///
+//authentications routes
+//register routes
+
+Route::get('/register', [AuthController::class, 'registerForm'])->middleware(["guest"]);
+Route::post('/register', [AuthController::class, 'register'])->middleware(["guest"]);
+
+//login routes
+
+Route::get('/login', [AuthController::class, 'loginForm'])->middleware(["guest"])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->middleware(["guest"]);
+
+//logout route
+
+Route::get('/logout', [AuthController::class, 'logout'])->middleware(["auth"]);
+
+
 Route::middleware([])->group(function () {
-    Route::get('/', [HomeController::class, 'index'])->name('admin.index');
+    Route::get('/', [HomeController::class, 'index']);
     ;
 });
