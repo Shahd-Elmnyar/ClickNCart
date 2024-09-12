@@ -19,4 +19,5 @@ return [
     'categories' => 'Categories',
     'pages' => 'Pages',
     'profile' => 'Profile',
+    'backWebsite'=>'Back to Website',
 ];

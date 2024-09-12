@@ -4,17 +4,16 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\AdminCategory;
+use App\Models\Category;
 
 class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    private $category_columns = ['name', 'description'];
     public function index()
     {
-        $categories = AdminCategory::all();
+        $categories = Category::all();
         return view('admin.categories.index', compact('categories'));
     }
 
@@ -45,26 +44,35 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit( $id)
     {
-        $category = AdminCategory::find($id);//  find the id of column selected to edit
+        $category = Category::find($id);//  find the id of column selected to edit
         return view('admin/categories/edit',compact('category'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        $request->validate(['name' => 'required']);
-        AdminCategory::where('id', $id)->update($request->only($this->category_columns));
-        return redirect()->route('admin.categories.index')->with('success', 'Category updated successfully.');//return directly to categories.index when success
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string',
+        ]);
+
+        $category = Category::find($id);
+
+        $category->name = $request->input('name');
+        $category->content = $request->input('description');
+        $category->save();
+
+        return redirect()->route('categories.index')->with('success', 'Category updated successfully.');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
         //
     }

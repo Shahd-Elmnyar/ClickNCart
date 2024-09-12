@@ -2,8 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\Admin\CategoryController as AdminCategoryController; // for Admin Categories
+use App\Http\Controllers\Admin\CategoryController ;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +20,6 @@ use App\Http\Controllers\Admin\CategoryController as AdminCategoryController; //
 
 Route::middleware('lang', 'admin')->group(function () {
     Route::get('/', [HomeController::class, 'index']);
-    Route::resource('categories', AdminCategoryController::class);
+    Route::resource('categories', CategoryController::class);
 });
 

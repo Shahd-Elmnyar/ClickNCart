@@ -31,7 +31,7 @@
                                         @endguest
                                         @auth
 
-                                        <a class="dropdown-item" href="{{ url('profile') }}">shahd elmnyar</a>
+                                        <a class="dropdown-item" href="{{ url('profile') }}">{{Auth::user()->name}} </a>
                                         @if(Auth::user()->role != 'user')
                                         <a class="dropdown-item" href="{{ url('admin') }}">Dashboard</a>
                                         @endif
