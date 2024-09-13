@@ -57,13 +57,13 @@ class CategoryController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'description' => 'required|string',
+            'content' => 'required|string',
         ]);
 
         $category = Category::find($id);
 
         $category->name = $request->input('name');
-        $category->content = $request->input('description');
+        $category->content = $request->input('content');
         $category->save();
 
         return redirect()->route('categories.index')->with('success', 'Category updated successfully.');
