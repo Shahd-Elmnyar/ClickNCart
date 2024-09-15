@@ -46,7 +46,7 @@ class CategoryController extends Controller
      */
     public function edit( $id)
     {
-        $category = Category::find($id);//  find the id of column selected to edit
+        $category = Category::find($id);
         return view('admin/categories/edit',compact('category'));
     }
 
@@ -62,9 +62,10 @@ class CategoryController extends Controller
 
         $category = Category::find($id);
 
-        $category->name = $request->input('name');
-        $category->content = $request->input('content');
-        $category->save();
+        $category->update([
+            'name' => $request->name,
+            'content' => $request->content
+        ]);
 
         return redirect()->route('categories.index')->with('success', 'Category updated successfully.');
     }
