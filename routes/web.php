@@ -6,8 +6,8 @@ use App\Http\Controllers\website\HomeController;
 use App\Http\Controllers\website\CartController;
 use App\Http\Controllers\website\ShopController;
 use App\Http\Controllers\website\ThanksController;
-
-
+use App\Http\Controllers\website\AboutController;
+use App\Http\Controllers\website\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +24,8 @@ Route::get('shop-single',[ShopController::class,'index']);
 Route::get('cart',[CartController::class,'index']);
 Route::get('',[HomeController::class,'index']);
 Route::get('thankyou',[ThanksController::class,'index']);
+Route::get('About', [AboutController::class , 'index']);
+Route::get('Checkout',[CheckoutController::class, 'index'])
 
 //authentications routes
 //register routes
