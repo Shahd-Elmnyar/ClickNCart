@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'title' => 'عربة التسوق',
+    'page_name' => 'عربة التسوق',
+    'image' => 'الصورة',
+    'product' => 'المنتج',
+    'price' => 'السعر',
+    'quantity' => 'الكمية',
+    'total' => 'الإجمالي',
+    'remove' => 'إزالة',
+    'top_up_tshirt' => 'تي شيرت توبي',
+    'polo_shirt' => 'قميص بولو',
+    'price_value' => '49.00$',
+    'update_cart' => 'تحديث العربة',
+    'continue_shopping' => 'استمرار التسوق',
+    'coupon' => 'رمز القسيمة',
+    'coupon_description' => 'أدخل رمز القسيمة الخاص بك إذا كان لديك واحدة.',
+    'coupon_placeholder' => 'رمز القسيمة',
+    'apply_coupon' => 'تطبيق القسيمة',
+    'cart_totals' => 'إجمالي العربة',
+    'subtotal' => 'المجموع الفرعي',
+    'subtotal_value' => '230.00$',
+    'total_value' => '230.00$',
+    'proceed_to_checkout' => 'الانتقال إلى الدفع',
+];

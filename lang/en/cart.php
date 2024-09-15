@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'title' => 'Cart',
+    'page_name' => 'Cart',
+    'image' => 'Image',
+    'product' => 'Product',
+    'price' => 'Price',
+    'quantity' => 'Quantity',
+    'total' => 'Total',
+    'remove' => 'Remove',
+    'top_up_tshirt' => 'Top Up T-Shirt',
+    'polo_shirt' => 'Polo Shirt',
+    'price_value' => '$49.00',
+    'update_cart' => 'Update Cart',
+    'continue_shopping' => 'Continue Shopping',
+    'coupon' => 'Coupon',
+    'coupon_description' => 'Enter your coupon code if you have one.',
+    'coupon_placeholder' => 'Coupon Code',
+    'apply_coupon' => 'Apply Coupon',
+    'cart_totals' => 'Cart Totals',
+    'subtotal' => 'Subtotal',
+    'subtotal_value' => '$230.00',
+    'total_value' => '$230.00',
+    'proceed_to_checkout' => 'Proceed To Checkout',
+];
