@@ -9,9 +9,25 @@ use App\Http\Controllers\website\LangController;
 use App\Http\Controllers\website\ShopController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\website\ThanksController;
+use App\Http\Controllers\website\AboutController;
+use App\Http\Controllers\website\CheckoutController;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
 
 
 Route::middleware('lang')->group(function () {
+    
+    Route::get('About', [AboutController::class , 'index']);
+    Route::get('Checkout',[CheckoutController::class, 'index'])
     Route::get('/shop-single', [ShopController::class, 'index']);
     Route::get('/cart', [CartController::class, 'index']);
     Route::get('', [HomeController::class, 'index']);
