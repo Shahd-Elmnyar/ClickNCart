@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <title>@yield('title')</title>
@@ -23,6 +23,7 @@
 
 <body>
     @include('website.components.navbar')
+    <h1>{{ __('messages.welcome') }}</h1>
     <script src="{{ asset('assets/js/bootstrap.min.css')}}"></script>
     <script src="{{ asset('assets/js/jquery-3.3.1.min.js')}}"></script>
     <script src="{{ asset('assets/js/jquery-ui.js')}}"></script>

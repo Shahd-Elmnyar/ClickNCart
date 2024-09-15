@@ -20,4 +20,5 @@ return [
     'pages' => 'Pages',
     'profile' => 'Profile',
     'backWebsite'=>'Back to Website',
+    'home' => 'Home',
 ];

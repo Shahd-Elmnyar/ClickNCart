@@ -5,14 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\RegisterRequest;
 
 class AuthController extends Controller
 {
-    public function __construct() {
-
-    }
     public function registerForm()
     {
         return view("auth.register");
@@ -39,6 +37,7 @@ class AuthController extends Controller
             'email' => 'required|email|max:255',
             'password' => 'required|string|min:5|max:30'
         ]);
+        // dd('s');
         $isLogin = Auth::attempt(["email" => $request->email, "password" => $request->password]);
         if (!$isLogin) {
             session()->flash('error-msg', 'Invalid email or password');
