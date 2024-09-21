@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\website\ThanksController;
 use App\Http\Controllers\website\AboutController;
 use App\Http\Controllers\website\CheckoutController;
+use App\Http\Controllers\website\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,9 +33,11 @@ Route::middleware('lang')->group(function () {
         Route::get('about', [AboutController::class , 'index']);
         Route::get('checkout',[CheckoutController::class, 'index']);
         Route::get('/shop-single', [ShopController::class, 'index']);
+        Route::get('/shop', [ShopController::class, 'shop']);
         Route::get('/cart', [CartController::class, 'index']);
         Route::get('', [HomeController::class, 'index']);
         Route::get('/thankyou', [ThanksController::class, 'index']);
+        Route::get('/contact', [ContactController::class, 'index']);
 
     //authentications routes
         //register routes

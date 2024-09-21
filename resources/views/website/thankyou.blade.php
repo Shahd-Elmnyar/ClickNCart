@@ -1,7 +1,7 @@
 @extends('layout')
 @section('title', 'Thank You')
 @section('content')
-@include('components.breadcrumb', ['pageName' => 'Thank You'])
+@include('website.components.breadcrumb', ['pageName' => 'Thank You'])
 
 
 <div class="site-section">
