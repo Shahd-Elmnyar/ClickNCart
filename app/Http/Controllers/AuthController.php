@@ -18,8 +18,10 @@ class AuthController extends Controller
     public function register(RegisterRequest $request)
     {
 
-        $user = User::create($request->validated(), ['password' => bcrypt($request->password)]);
+        $user = User::create( $request->validated());
         $user->role_id = Role::where('name', 'user')->first()->id;
+        $user->password = bcrypt($request->password);
+        $user->save();
         Auth::login($user);
         session()->flash('success-msg', 'you have registered');
         return redirect(url('/'));

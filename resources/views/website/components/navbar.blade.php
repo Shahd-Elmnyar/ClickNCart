@@ -41,16 +41,18 @@
                                             <button type="submit" class=" dropdown-item">Logout</button>
                                         </form>
                                         @endauth
-                                        @if(App::getLocale()=='ar')
+                                        @if($lang=='ar')
                                         <a class="dropdown-item" href="{{url('lang/set/en')}}">En</a>
                                         @else
                                         <a class="dropdown-item" href="{{url('lang/set/ar')}}">ع</a>
                                         @endif
-                        </div>
-                        </li>
-                        <li><a href="#"><span class="icon icon-heart-o"></span></a></li>
-                        <li>
-                            <a href="{{url('cart')}}" class="site-cart">
+                                    </div>
+                                </li>
+                            <li>
+                                <a href="#"><span class="icon icon-heart-o"></span></a>
+                            </li>
+                            <li>
+                                <a href="{{url('cart')}}" class="site-cart">
                                 <span class="icon icon-shopping_cart"></span>
                                 <span class="count">2</span>
                             </a>
@@ -59,7 +61,6 @@
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
 </div>

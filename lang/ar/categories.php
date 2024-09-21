@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'create_new_category' => 'إنشاء فئة جديدة',
+    'name' => 'الاسم',
+    'description' => 'الوصف',
+    'content' => 'المحتوى',
+    'image' => 'الصورة',
+    'create_category' => 'إنشاء فئة',
+    'back' => 'رجوع',
+    'edit_category' => 'تعديل الفئة',
+    'update_category' => 'تحديث الفئة',
+    'categories' => 'الفئات',
+    'add_category' => 'إضافة فئة',
+    'view_trashed_categories' => 'عرض الفئات المحذوفة',
+    'id' => 'المعرف',
+    'action' => 'الإجراء',
+    'confirm_trash' => 'هل أنت متأكد أنك تريد نقل هذه الفئة إلى سلة المحذوفات؟',
+    'trash' => 'حذف',
+    'show_category' => 'عرض الفئة: :name',
+    'category_not_found' => 'الفئة غير موجودة',
+    'trashed_categories' => 'الفئات المحذوفة',
+    'no_trashed_categories' => 'لا توجد فئات محذوفة.',
+    'actions' => 'الإجراءات',
+    'restore' => 'استعادة',
+    'confirm_permanent_delete' => 'هل أنت متأكد أنك تريد حذف هذه الفئة نهائيًا؟ لا يمكن التراجع عن هذا الإجراء.',
+    'delete_permanently' => 'حذف نهائي',
+];

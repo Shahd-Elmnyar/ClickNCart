@@ -23,32 +23,42 @@ use App\Http\Controllers\website\CheckoutController;
 |
 */
 
+//lang route
+Route::get('/lang/set/{lang}', [LangController::class, 'set']);
 
 Route::middleware('lang')->group(function () {
 
-    Route::get('About', [AboutController::class , 'index']);
-    Route::get('Checkout',[CheckoutController::class, 'index']);
-    Route::get('/shop-single', [ShopController::class, 'index']);
-    Route::get('/cart', [CartController::class, 'index']);
-    Route::get('', [HomeController::class, 'index']);
-    Route::get('/thankyou', [ThanksController::class, 'index']);
+    //website routes
+        Route::get('about', [AboutController::class , 'index']);
+        Route::get('checkout',[CheckoutController::class, 'index']);
+        Route::get('/shop-single', [ShopController::class, 'index']);
+        Route::get('/cart', [CartController::class, 'index']);
+        Route::get('', [HomeController::class, 'index']);
+        Route::get('/thankyou', [ThanksController::class, 'index']);
 
     //authentications routes
-    //register routes
-    Route::get('/register', [AuthController::class, 'registerForm'])->middleware(["guest"]);
-    Route::post('/register', [AuthController::class, 'register'])->middleware(["guest"]);
+        //register routes
+            Route::get('/register', [AuthController::class, 'registerForm'])->middleware(["guest"]);
+            Route::post('/register', [AuthController::class, 'register'])->middleware(["guest"]);
 
-    //login routes
-    Route::get('/login', [AuthController::class, 'loginForm'])->middleware(["guest"])->name('login');
-    Route::post('/login', [AuthController::class, 'login'])->middleware(["guest"]);
+        //login routes
+            Route::get('/login', [AuthController::class, 'loginForm'])->middleware(["guest"])->name('login');
+            Route::post('/login', [AuthController::class, 'login'])->middleware(["guest"]);
 
-    //logout route
-    Route::get('/logout', [AuthController::class, 'logout'])->middleware(["auth"]);
+        //logout route
+            Route::get('/logout', [AuthController::class, 'logout'])->middleware(["auth"]);
 
-    Route::prefix('admin')->group(function () {
-        Route::get('', [AdminHomeController::class, 'index']);
-        Route::resource('categories', CategoryController::class);
-    });
+            
+            
+            //admin routes
+            Route::prefix('admin')->group(function () {
+                Route::get('', [AdminHomeController::class, 'index']);
+                Route::resource('categories', CategoryController::class);
+                Route::get('/categories-trashed', [CategoryController::class, 'trashed'])->name('categories.trashed');
+                Route::post('/categories/{id}/restore', [CategoryController::class, 'restore'])->name('categories.restore');
+                Route::delete('/categories/{id}/force-delete', [CategoryController::class, 'forceDelete'])->name('categories.forceDelete');
+            });
+
 });
 
-Route::get('/lang/set/{lang}', [LangController::class, 'set']);
+

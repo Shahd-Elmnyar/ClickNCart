@@ -1,6 +1,18 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
+@php
+    if(!auth()->check()){
+        $lang = 'en';
+        $Dir = 'ltr';
+    }else{
+        $lang = auth()->user()->locale;
+        if($lang == 'ar'){
+            $Dir = 'rtl';
+        }else{
+            $Dir = 'ltr';
+        }
+    }
+@endphp
+<html lang="{{$lang}}" dir="{{$Dir}}">
 <head>
     <title>@yield('title')</title>
     <meta charset="utf-8">
