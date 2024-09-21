@@ -7,7 +7,7 @@
                     <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
                         <form action="" class="site-block-top-search">
                             <span class="icon icon-search2"></span>
-                            <input type="text" class="form-control border-0" placeholder="Search">
+                            <input type="text" class="form-control border-0" placeholder="{{__('navbar.search')}}">
                         </form>
                     </div>
 
@@ -26,19 +26,18 @@
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                                         @guest
-                                        <a class="dropdown-item" href="{{ url('register') }}">register </a>
-                                        <a class="dropdown-item" href="{{ url('login') }}">Login </a>
+                                        <a class="dropdown-item" href="{{ url('register') }}">{{ __('navbar.register') }}</a>
+                                        <a class="dropdown-item" href="{{ url('login') }}">{{ __('navbar.login') }}</a>
                                         @endguest
                                         @auth
-
-                                        <a class="dropdown-item" href="{{ url('profile') }}">{{Auth::user()->name}} </a>
+                                        <a class="dropdown-item" href="{{ url('profile') }}">{{Auth::user()->name}}</a>
                                         @if(Auth::user()->role != 'user')
-                                        <a class="dropdown-item" href="{{ url('admin') }}">Dashboard</a>
+                                        <a class="dropdown-item" href="{{ url('admin') }}">{{ __('navbar.dashboard') }}</a>
                                         @endif
                                         <!-- <a class="dropdown-item" href="{{ url('logout') }}">Logout</a> -->
                                         <form method="POST" action="{{ route('logout') }}">
                                             @csrf
-                                            <button type="submit" class=" dropdown-item">Logout</button>
+                                            <button type="submit" class="dropdown-item">{{ __('navbar.logout') }}</button>
                                         </form>
                                         @endauth
                                         @if($lang=='ar')
@@ -68,33 +67,33 @@
     <div class="container">
         <ul class="site-menu js-clone-nav d-none d-md-block">
             <li class="has-children {{ Request::is('/') ? 'active' : '' }}">
-                <a href="{{url('')}}">{{__('home.home')}}</a>
+                <a href="{{url('')}}">{{__('navbar.home')}}</a>
                 <ul class="dropdown">
-                    <li><a href="#">Menu One</a></li>
-                    <li><a href="#">Menu Two</a></li>
-                    <li><a href="#">Menu Three</a></li>
+                    <li><a href="#">{{__('navbar.menu_one')}}</a></li>
+                    <li><a href="#">{{__('navbar.menu_two')}}</a></li>
+                    <li><a href="#">{{__('navbar.menu_three')}}</a></li>
                     <li class="has-children">
-                        <a href="#">Sub Menu</a>
+                        <a href="#">{{__('navbar.sub_menu')}}</a>
                         <ul class="dropdown">
-                            <li><a href="#">Menu One</a></li>
-                            <li><a href="#">Menu Two</a></li>
-                            <li><a href="#">Menu Three</a></li>
+                            <li><a href="#">{{__('navbar.menu_one')}}</a></li>
+                            <li><a href="#">{{__('navbar.menu_two')}}</a></li>
+                            <li><a href="#">{{__('navbar.menu_three')}}</a></li>
                         </ul>
                     </li>
                 </ul>
             </li>
             <li class="has-children {{ Request::is('about') ? 'active' : '' }}">
-                <a href="{{url('about')}}">About</a>
+                <a href="{{url('about')}}">{{__('navbar.about')}}</a>
                 <ul class="dropdown">
-                    <li><a href="#">Menu One</a></li>
-                    <li><a href="#">Menu Two</a></li>
-                    <li><a href="#">Menu Three</a></li>
+                    <li><a href="#">{{__('navbar.menu_one')}}</a></li>
+                    <li><a href="#">{{__('navbar.menu_two')}}</a></li>
+                    <li><a href="#">{{__('navbar.menu_three')}}</a></li>
                 </ul>
             </li>
-            <li class="{{ Request::is('shop-single') ? 'active' : '' }}"><a href="{{url('shop-single')}}">Shop</a></li>
-            <li class="{{ Request::is('catalogue') ? 'active' : '' }}"><a href="#">Catalogue</a></li>
-            <li class="{{ Request::is('new-arrivals') ? 'active' : '' }}"><a href="#">New Arrivals</a></li>
-            <li class="{{ Request::is('contact') ? 'active' : '' }}"><a href="contact.html">Contact</a></li>
+            <li class="{{ Request::is('shop-single') ? 'active' : '' }}"><a href="{{url('shop-single')}}">{{__('navbar.shop')}}</a></li>
+            <li class="{{ Request::is('catalogue') ? 'active' : '' }}"><a href="#">{{__('navbar.catalogue')}}</a></li>
+            <li class="{{ Request::is('new-arrivals') ? 'active' : '' }}"><a href="#">{{__('navbar.new_arrivals')}}</a></li>
+            <li class="{{ Request::is('contact') ? 'active' : '' }}"><a href="contact.html">{{__('navbar.contact')}}</a></li>
         </ul>
     </div>
 </nav>
