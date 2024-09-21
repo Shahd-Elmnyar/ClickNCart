@@ -12,4 +12,9 @@ class ShopController extends Controller
     {
         return view('website.shop-single');
     }
+
+    public function shop()
+    {
+        return view('website.shop');
+    }
 }
