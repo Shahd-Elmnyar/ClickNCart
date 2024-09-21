@@ -12,7 +12,11 @@ return [
     | you want to customize your views to better match your application.
     |
     */
-
+    'Cart' =>'cart',
+    'Shop Single'=>'Show Shop', 
+    'Contact Us'=>'Contact Us',
+    'bigSale' => 'Big Sale',
+    'about' => 'about',
     'dashboard' => 'Dashboard',
     'products' => 'Products',
     'users' => 'Users',

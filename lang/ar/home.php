@@ -1,6 +1,12 @@
 <?php
 
 return [
+
+    'cart'=>'العربه',
+    'Shop Single'=>'عرض المنتج',
+    'Contact Us' =>'تواصل معنا',
+    'bigSale' =>'اعلي خصومات',
+    'about' =>'عن الموقع',
     'home' => 'الرئيسية',
     'view_admin_dashboard' => 'عرض لوحة التحكم',
     'finding_perfect_shoes' => 'اعثر على حذائك المثالي',
