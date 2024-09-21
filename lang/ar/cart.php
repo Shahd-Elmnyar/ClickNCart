@@ -1,0 +1,20 @@
+<?php
+return [
+    'image' => 'الصورة',
+    'product' => 'المنتج',
+    'price' => 'السعر',
+    'quantity' => 'الكمية',
+    'total' => 'الإجمالي',
+    'remove' => 'إزالة',
+    'update_cart' => 'تحديث السلة',
+    'continue_shopping' => 'مواصلة التسوق',
+    'coupon' => 'الكوبون',
+    'coupon_instruction' => 'أدخل رمز الكوبون الخاص بك إذا كان لديك واحد.',
+    'coupon_code' => 'رمز الكوبون',
+    'apply_coupon' => 'تطبيق الكوبون',
+    'cart_totals' => 'إجماليات السلة',
+    'subtotal' => 'المجموع الفرعي',
+    'proceed_to_checkout' => 'المتابعة إلى الدفع',
+    'top_up_t_shirt' => 'تي شيرت توب أب',
+    'polo_shirt' => 'قميص بولو',
+];
