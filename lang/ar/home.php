@@ -1,7 +1,7 @@
 <?php
 
 return [
-
+    'shop'=>'المتجر',
     'cart'=>'العربه',
     'Shop Single'=>'عرض المنتج',
     'Contact Us' =>'تواصل معنا',

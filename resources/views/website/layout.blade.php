@@ -14,7 +14,7 @@
 @endphp
 <html lang="{{$lang}}" dir="{{$Dir}}">
 <head>
-    <title>@yield('title')</title>
+    <title>@yield('title')-shopper</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -35,6 +35,8 @@
 
 <body>
     @include('website.components.navbar')
+    @yield('content')
+    @include('website.components.footer')
     {{-- <h1>{{ __('messages.welcome') }}</h1> --}}
     <script src="{{ asset('assets/js/bootstrap.min.css')}}"></script>
     <script src="{{ asset('assets/js/jquery-3.3.1.min.js')}}"></script>
@@ -44,8 +46,8 @@
     <script src="{{ asset('assets/js/owl.carousel.min.js')}}"></script>
     <script src="{{ asset('assets/js/jquery.magnific-popup.min.js')}}"></script>
     <script src="{{ asset('assets/js/aos.js')}}"></script>
-
     <script src="{{ asset('assets/js/main.js')}}"></script>
+    @yield ('scripts')
 
 </body>
 

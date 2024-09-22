@@ -1,7 +1,7 @@
 @extends('website.layout')
-@section('title', __('shop.shop'))
+@section('title', 'Shop')
 @section('content')
-@include('website.components.breadcrumb', ['pageName' => __('shop.shop')])
+@include('website.components.breadcrumb', ['pageName' => 'shop'])
 
 <div class="site-section">
     <div class="container">
