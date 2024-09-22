@@ -11,7 +11,6 @@ class LangController extends Controller
     {
         if (auth()->check()) {
             auth()->user()->update(['locale' => $lang]);
-            // dd(auth()->user()->locale);
             return back();
         }
         
@@ -21,8 +20,6 @@ class LangController extends Controller
         }
         
         $request->session()->put('lang', $lang);
-        
-        // Update authenticated user's locale if logged in
         return back();
     }
 }

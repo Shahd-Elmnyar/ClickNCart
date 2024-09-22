@@ -30,22 +30,22 @@ Route::get('/lang/set/{lang}', [LangController::class, 'set']);
 Route::middleware('lang')->group(function () {
 
     //website routes
-        Route::get('about', [AboutController::class , 'index']);
-        Route::get('checkout',[CheckoutController::class, 'index']);
-        Route::get('/shop-single', [ShopController::class, 'index']);
-        Route::get('/shop', [ShopController::class, 'shop']);
-        Route::get('/cart', [CartController::class, 'index']);
-        Route::get('', [HomeController::class, 'index']);
-        Route::get('/thankyou', [ThanksController::class, 'index']);
-        Route::get('/contact', [ContactController::class, 'index']);
+        Route::view('about', 'website.about');
+        Route::view('checkout','website.checkout');
+        Route::view('/shop-single', 'website.shop-single');
+        Route::view('/shop','website.shop');
+        Route::view('/cart','website.cart');
+        Route::view('','website.index');
+        Route::view('/thankyou', 'website.thankyou');
+        Route::view('/contact', 'website.contact');
 
     //authentications routes
         //register routes
-            Route::get('/register', [AuthController::class, 'registerForm'])->middleware(["guest"]);
+            Route::view('/register', "auth.register")->middleware(["guest"]);
             Route::post('/register', [AuthController::class, 'register'])->middleware(["guest"]);
 
         //login routes
-            Route::get('/login', [AuthController::class, 'loginForm'])->middleware(["guest"])->name('login');
+            Route::view('/login',"auth.login")->middleware(["guest"])->name('login');
             Route::post('/login', [AuthController::class, 'login'])->middleware(["guest"]);
 
         //logout route
@@ -55,7 +55,7 @@ Route::middleware('lang')->group(function () {
             
             //admin routes
             Route::prefix('admin')->group(function () {
-                Route::get('', [AdminHomeController::class, 'index']);
+                Route::view('','admin.index');
                 Route::resource('categories', CategoryController::class);
                 Route::get('/categories-trashed', [CategoryController::class, 'trashed'])->name('categories.trashed');
                 Route::post('/categories/{id}/restore', [CategoryController::class, 'restore'])->name('categories.restore');
