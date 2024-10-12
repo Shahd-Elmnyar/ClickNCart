@@ -2,16 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\website\CartController;
 use App\Http\Controllers\website\HomeController;
-use App\Http\Controllers\admin\HomeController as AdminHomeController;
 use App\Http\Controllers\website\LangController;
 use App\Http\Controllers\website\ShopController;
+use App\Http\Controllers\website\AboutController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\website\ThanksController;
-use App\Http\Controllers\website\AboutController;
-use App\Http\Controllers\website\CheckoutController;
 use App\Http\Controllers\website\ContactController;
+use App\Http\Controllers\website\CheckoutController;
+use App\Http\Controllers\admin\HomeController as AdminHomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,15 +53,24 @@ Route::middleware('lang')->group(function () {
             Route::get('/logout', [AuthController::class, 'logout'])->middleware(["auth"]);
 
             
-            
             //admin routes
-            Route::prefix('admin')->group(function () {
-                Route::view('','admin.index');
-                Route::resource('categories', CategoryController::class);
-                Route::get('/categories-trashed', [CategoryController::class, 'trashed'])->name('categories.trashed');
-                Route::post('/categories/{id}/restore', [CategoryController::class, 'restore'])->name('categories.restore');
-                Route::delete('/categories/{id}/force-delete', [CategoryController::class, 'forceDelete'])->name('categories.forceDelete');
+            Route::middleware('admin')->group(function () {
+                Route::prefix('admin')->group(function () {
+                    Route::view('','admin.index')->name('admin');
+                    Route::resource('categories', CategoryController::class);
+                    Route::get('/categories-trashed', [CategoryController::class, 'trashed'])->name('categories.trashed');
+                    Route::post('/categories/{id}/restore', [CategoryController::class, 'restore'])->name('categories.restore');
+                    Route::delete('/categories/{id}/force-delete', [CategoryController::class, 'forceDelete'])->name('categories.forceDelete');
+                    
+                    Route::middleware('superAdmin')->group(function () {
+                        //user routes
+                        Route::resource('users', UserController::class);
+                        Route::get('/users-trashed', [UserController::class, 'trashed'])->name('users.trashed');
+                        Route::post('/users/{id}/restore', [UserController::class, 'restore'])->name('users.restore');
+                        Route::delete('/users/{id}/force-delete', [UserController::class, 'forceDelete'])->name('users.forceDelete');
+                });
             });
+        });
 
 });
 

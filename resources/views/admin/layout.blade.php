@@ -305,7 +305,7 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link " href="{{url('admin')}}">
+                <a class="nav-link " href="{{route('admin')}}">
                     <i class="bi bi-grid"></i>
                     <span>{{__('home.dashboard')}}</span>
                 </a>
@@ -453,7 +453,7 @@
             <!-- End Components Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="{{url('admin/categories')}}">
+                <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="{{route('categories.index')}}">
                     <i class="bi bi-journal-text"></i><span>{{__('home.categories')}}</span>
                     <!-- <i class="bi bi-chevron-down ms-auto"></i> -->
                 </a>
@@ -483,10 +483,12 @@
             <!-- End Forms Nav -->
 
             <li class="nav-item">
+                @if(Auth::user()->role == 'super admin')
                 <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="{{url('admin/users')}}">
                     <i class="bi bi-layout-text-window-reverse"></i><span>{{__('home.users')}}</span>
                     <!-- <i class="bi bi-chevron-down ms-auto"></i> -->
                 </a>
+                @endif
                 <!-- <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="tables-general.html">
@@ -553,7 +555,7 @@
             <li class="nav-heading">{{__('home.pages')}}</li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ url('admin.profile') }}">
+                <a class="nav-link collapsed" href="{{ url('admin/profile') }}">
                     <i class="bi bi-person"></i>
                     <span>{{__('home.profile')}}</span>
                 </a>
