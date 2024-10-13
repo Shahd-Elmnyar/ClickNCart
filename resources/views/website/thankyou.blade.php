@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('website.layout')
 @section('title', 'Thank You')
 @section('content')
 @include('website.components.breadcrumb', ['pageName' => 'Thank You'])

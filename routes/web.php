@@ -39,6 +39,8 @@ Route::middleware('lang')->group(function () {
         Route::view('','website.index');
         Route::view('/thankyou', 'website.thankyou');
         Route::view('/contact', 'website.contact');
+        //Contact-Mail route
+        Route::post('/contact', [ContactController::class, 'contactFormSubmit'])->name('contact.submit');
 
     //authentications routes
         //register routes
@@ -52,7 +54,7 @@ Route::middleware('lang')->group(function () {
         //logout route
             Route::get('/logout', [AuthController::class, 'logout'])->middleware(["auth"]);
 
-            
+
             //admin routes
             Route::middleware('admin')->group(function () {
                 Route::prefix('admin')->group(function () {
@@ -61,7 +63,7 @@ Route::middleware('lang')->group(function () {
                     Route::get('/categories-trashed', [CategoryController::class, 'trashed'])->name('categories.trashed');
                     Route::post('/categories/{id}/restore', [CategoryController::class, 'restore'])->name('categories.restore');
                     Route::delete('/categories/{id}/force-delete', [CategoryController::class, 'forceDelete'])->name('categories.forceDelete');
-                    
+
                     Route::middleware('superAdmin')->group(function () {
                         //user routes
                         Route::resource('users', UserController::class);
