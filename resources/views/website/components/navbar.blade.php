@@ -67,31 +67,13 @@
                 <ul class="site-menu js-clone-nav d-none d-md-block">
                     <li class="has-children {{ Request::is('/') ? 'active' : '' }}">
                         <a href="{{url('')}}">{{__('navbar.home')}}</a>
-                        <ul class="dropdown">
-                            <li><a href="#">{{__('navbar.menu_one')}}</a></li>
-                            <li><a href="#">{{__('navbar.menu_two')}}</a></li>
-                            <li><a href="#">{{__('navbar.menu_three')}}</a></li>
-                            <li class="has-children">
-                                <a href="#">{{__('navbar.sub_menu')}}</a>
-                                <ul class="dropdown">
-                                    <li><a href="#">{{__('navbar.menu_one')}}</a></li>
-                                    <li><a href="#">{{__('navbar.menu_two')}}</a></li>
-                                    <li><a href="#">{{__('navbar.menu_three')}}</a></li>
-                                </ul>
-                            </li>
-                        </ul>
                     </li>
                     <li class="has-children {{ Request::is('about') ? 'active' : '' }}">
                         <a href="{{url('about')}}">{{__('navbar.about')}}</a>
-                        <ul class="dropdown">
-                            <li><a href="#">{{__('navbar.menu_one')}}</a></li>
-                            <li><a href="#">{{__('navbar.menu_two')}}</a></li>
-                            <li><a href="#">{{__('navbar.menu_three')}}</a></li>
-                        </ul>
                     </li>
                     <li class="{{ Request::is('shop') ? 'active' : '' }}"><a href="{{url('shop')}}">{{__('navbar.shop')}}</a></li>
-                    <li class="{{ Request::is('catalogue') ? 'active' : '' }}"><a href="#">{{__('navbar.catalogue')}}</a></li>
-                    <li class="{{ Request::is('new-arrivals') ? 'active' : '' }}"><a href="#">{{__('navbar.new_arrivals')}}</a></li>
+                    {{-- <li class="{{ Request::is('catalogue') ? 'active' : '' }}"><a href="#">{{__('navbar.catalogue')}}</a></li> --}}
+                    {{-- <li class="{{ Request::is('new-arrivals') ? 'active' : '' }}"><a href="#">{{__('navbar.new_arrivals')}}</a></li> --}}
                     <li class="{{ Request::is('contact') ? 'active' : '' }}"><a href="{{url('contact')}}">{{__('navbar.contact')}}</a></li>
                 </ul>
             </div>

@@ -23,40 +23,22 @@
             @csrf
             <div class="p-3 p-lg-5 border ">
               <div class="form-group row">
-                <div class="col-md-6">
-                  <label for="first_name" class="text-black">{{ __('contact.first_name') }} <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="first_name" name="first_name">
-                  @error('first_name')  <span class="text-danger">{{ $message }}</span> @enderror
+                <div class="col-md-12">
+                  <label for="title" class="text-black">{{ __('contact.title') }}</label>
+                  <input type="text" class="form-control" id="title" name="title">
+                  @error('title')  <span class="text-danger">{{ $message }}</span> @enderror
                 </div>
-                <div class="col-md-6">
-                  <label for="Last_name" class="text-black">{{ __('contact.last_name') }} <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="Last_name" name="Last_name">
-                  @error('Last_name')  <span class="text-danger">{{ $message }}</span> @enderror
-                </div>
+              
               </div>
               <div class="form-group row">
                 <div class="col-md-12">
-                  <label for="email" class="text-black">{{ __('contact.email') }} <span class="text-danger">*</span></label>
-                  <input type="email" class="form-control" id="email" name="email" placeholder="">
-                  @error('email')  <span class="text-danger">{{ $message }}</span> @enderror
+                  <label for="content" class="text-black">{{ __('contact.message') }}</label>
+                  <textarea name="content" id="content" cols="30" rows="7" class="form-control">{{ old('content') }}</textarea>
+                  @error('content')  <span class="text-danger">{{ $message }}</span> @enderror
                 </div>
               </div>
               <div class="form-group row">
-                <div class="col-md-12">
-                  <label for="subject" class="text-black">{{ __('contact.subject') }}</label>
-                  <input type="text" class="form-control" id="subject" name="subject">
-                  @error('subject')  <span class="text-danger">{{ $message }}</span> @enderror
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-md-12">
-                  <label for="c_message" class="text-black">{{ __('contact.message') }}</label>
-                  <textarea name="c_message" id="c_message" cols="30" rows="7" class="form-control">{{ old('c_message') }}</textarea>
-                  @error('c_message')  <span class="text-danger">{{ $message }}</span> @enderror
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-lg-12">
+                <div class="col-12">
                   <input type="submit" class="btn btn-primary btn-lg btn-block" value="{{ __('contact.send_message') }}">
                 </div>
               </div>

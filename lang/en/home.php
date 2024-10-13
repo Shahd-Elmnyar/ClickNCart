@@ -45,4 +45,6 @@ return [
     'sale_meta' => 'By :author <span class="block-8-sep">&bullet;</span> :date',
     'sale_description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam iste dolor accusantium facere corporis ipsum animi deleniti fugiat. Ex, veniam?',
     'sale_discount' => '50% less in all items',
+    'messages' => 'Messages',
+    'subCategories' => 'Sub Categories',
 ];

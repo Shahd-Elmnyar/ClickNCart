@@ -1,11 +1,11 @@
 @extends('admin.layout')
-@section('title', 'Home')
+@section('title', 'Categories')
 @section('content')
 
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Data Tables</h1>
+            <h1>{{ __('categories.categories') }}</h1>
             @include('admin.components.breadcrumb', ['pageName' => 'Categories'])
         </div><!-- End Page Title -->
 
