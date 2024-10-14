@@ -48,7 +48,7 @@
                                     </div>
                                 </li>
                             <li>
-                                <a href="#"><span class="icon icon-heart-o"></span></a>
+                                <a href="{{route('wishlist')}}"><span class="icon icon-heart-o"></span></a>
                             </li>
                             <li>
                                 <a href="{{url('cart')}}" class="site-cart">
@@ -71,7 +71,7 @@
                     <li class="has-children {{ Request::is('about') ? 'active' : '' }}">
                         <a href="{{url('about')}}">{{__('navbar.about')}}</a>
                     </li>
-                    <li class="{{ Request::is('shop') ? 'active' : '' }}"><a href="{{url('shop')}}">{{__('navbar.shop')}}</a></li>
+                    <li class="{{ Request::is('shop') ? 'active' : '' }}"><a href="{{url('shops')}}">{{__('navbar.shop')}}</a></li>
                     {{-- <li class="{{ Request::is('catalogue') ? 'active' : '' }}"><a href="#">{{__('navbar.catalogue')}}</a></li> --}}
                     {{-- <li class="{{ Request::is('new-arrivals') ? 'active' : '' }}"><a href="#">{{__('navbar.new_arrivals')}}</a></li> --}}
                     <li class="{{ Request::is('contact') ? 'active' : '' }}"><a href="{{url('contact')}}">{{__('navbar.contact')}}</a></li>

@@ -14,7 +14,7 @@ return [
     */
     'shop'=>'Shop',
     'Cart' =>'cart',
-    'Shop Single'=>'Show Shop', 
+    'Shop Single'=>'Show Shop',
     'Contact Us'=>'Contact Us',
     'bigSale' => 'Big Sale',
     'about' => 'about',
@@ -47,4 +47,5 @@ return [
     'sale_discount' => '50% less in all items',
     'messages' => 'Messages',
     'subCategories' => 'Sub Categories',
+    'wishlist' =>  'Wishlist',
 ];

@@ -23,7 +23,7 @@ return new class extends Migration
             $table->tinyInteger('active')->default(1);
             $table->tinyInteger('featured')->default(1);
             //rate
-            $table->foreignId('sub_category_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('category_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

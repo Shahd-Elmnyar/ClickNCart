@@ -15,6 +15,7 @@ use App\Http\Controllers\website\ProductController;
 use App\Http\Controllers\website\CheckoutController;
 use App\Http\Controllers\admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\ContactController as AdminContactController;
+use App\Http\Controllers\website\WishlistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,11 +38,16 @@ Route::middleware('lang')->group(function () {
         Route::view('checkout','website.checkout');
         Route::view('/shop-single', 'website.shop-single');
         Route::get('/product/{id}', [ProductController::class, 'show']);
-        Route::view('/shop','website.shop');
+        // Route::view('/shop','website.shop');
         Route::view('/cart','website.cart');
         Route::view('','website.index');
         Route::view('/thankyou', 'website.thankyou');
         Route::view('/contact', 'website.contact');
+
+        //shop route
+        Route::resource('shops',ShopController::class);
+        //wishlist route
+        Route::get('/wishlist', [WishlistController::class, 'wishlist'])->name('wishlist');
         //Contact-Mail route
         Route::post('/contact', [ContactController::class, 'contactFormSubmit'])->name('contact.submit');
 
