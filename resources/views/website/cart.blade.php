@@ -81,7 +81,7 @@
                         <button class="btn btn-primary btn-sm btn-block">{{ __('cart.update_cart') }}</button>
                     </div>
                     <div class="col-md-6">
-                        <button class="btn btn-outline-primary btn-sm btn-block">{{ __('cart.continue_shopping') }}</button>
+                        <a href="{{url('shops')}}" class="btn btn-outline-primary btn-sm btn-block">{{ __('cart.continue_shopping') }}</a>
                     </div>
                 </div>
                 <div class="row">

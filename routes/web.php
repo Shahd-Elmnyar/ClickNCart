@@ -38,9 +38,10 @@ Route::middleware('lang')->group(function () {
         Route::view('checkout','website.checkout');
         Route::view('/shop-single', 'website.shop-single');
         Route::get('/product/{id}', [ProductController::class, 'show']);
-        // Route::view('/shop','website.shop');
         Route::view('/cart','website.cart');
         Route::view('','website.index');
+        Route::get('',[HomeController::class, 'index']);
+        Route::get('/showCategory/{id}', [HomeController::class, 'showCategory']);
         Route::view('/thankyou', 'website.thankyou');
         Route::view('/contact', 'website.contact');
         Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');

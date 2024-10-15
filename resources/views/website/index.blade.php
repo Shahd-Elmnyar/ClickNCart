@@ -62,7 +62,7 @@
                 <div class="text">
                     <h2 class="text-uppercase">{{ __('home.customer_support') }}</h2>
                     <p>
-                        <a href="#" class="btn btn-sm btn-primary">{{ __('home.shop_now') }}</a>
+                        <a href="{{url('shops')}}" class="btn btn-sm btn-primary">{{ __('home.shop_now') }}</a>
                     </p>
                 </div>
             </div>
@@ -91,7 +91,7 @@
                 <h2><a href="#">{{ __('home.sale_discount') }}</a></h2>
                 <p class="post-meta mb-4">{!! __('home.sale_meta', ['author' => '<a href="#">Carl Smith</a>', 'date' => 'September 3, 2018']) !!}</p>
                 <p>{{ __('home.sale_description') }}</p>
-                <p><a href="#" class="btn btn-primary btn-sm">{{ __('home.shop_now') }}</a></p>
+                <p><a href="{{url('shops')}}" class="btn btn-primary btn-sm">{{ __('home.shop_now') }}</a></p>
             </div>
         </div>
     </div>

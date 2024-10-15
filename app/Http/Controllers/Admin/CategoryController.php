@@ -42,8 +42,8 @@ class CategoryController extends Controller
         }
 
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('category_images', 'public');
-            
+            $imagePath = $request->file('image')->store('category_images');
+
             if (!$imagePath) {
                 return back()->with('error', 'Failed to upload image. Please try again.')->withInput();
             }
@@ -105,7 +105,7 @@ class CategoryController extends Controller
             }
 
             // Store new image
-            $imagePath = $request->file('image')->store('category_images', 'public');
+            $imagePath = $request->file('image')->store('category_images');
             $category->img = $imagePath;
         }
 
