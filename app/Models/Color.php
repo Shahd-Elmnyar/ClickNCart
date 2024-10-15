@@ -5,22 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Size extends Model
+class Color extends Model
 {
     use HasFactory;
+
     protected $fillable = ['name'];
 
     /**
-     * The products that have this size.
+     * The products that have this color.
      */
     public function products()
     {
-        return $this->belongsToMany(Product::class,'sizes_products','size_id', 'product_id')
-                    ->withPivot('is_active')  // Include 'is_active' field from the pivot table
-                    ->withTimestamps();       // Track timestamps on the pivot table
-    }
+        return $this->belongsToMany(Product::class, 'colors_products', 'color_id', 'product_id');
 
-    //get only the active sizes for a product,
+    }
+    //get only the colors  for a product,
     public function activeForProduct(Product $product)
 {
     return $this->products()->wherePivot('active', true)->where('product_id', $product->id)->exists();

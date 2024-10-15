@@ -18,7 +18,7 @@ return new class extends Migration
             $table->mediumText('content');
             $table->string('img');
             $table->tinyInteger('active')->default(1);
-            $table->unsignedBigInteger('parent_id')->nullable();
+            $table->unsignedBigInteger('parent_id')->nullable();//nullable for top level categories
             $table->timestamps();
         });
     }

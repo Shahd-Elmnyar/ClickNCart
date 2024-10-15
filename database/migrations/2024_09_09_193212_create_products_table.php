@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('discount_type');
             $table->double('discount')->nullable();
             $table->tinyInteger('active')->default(1);
-            $table->foreignId('category_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('category_id')->constrained()->onDelete('cascade')->onUpdate('cascade');//
             $table->timestamps();
         });
     }

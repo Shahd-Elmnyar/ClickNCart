@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sizes', function (Blueprint $table) {
-            $table->id();
-            $table->mediumText('name');
-            $table->tinyInteger('active')->default(1);
-            $table->timestamps();
+        Schema::table('categories', function (Blueprint $table) {
+            $table->softDeletes(); // Adds the 'deleted_at' column
         });
     }
 
@@ -24,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sizes');
+        Schema::table('categories', function (Blueprint $table) {
+            $table->dropSoftDeletes(); // Removes the 'deleted_at' column if rolled back
+        });
     }
 };

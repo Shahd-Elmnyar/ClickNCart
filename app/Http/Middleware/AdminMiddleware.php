@@ -16,9 +16,9 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (auth()->check() && auth()->user()->isAdmin =1) {
-            return $next($request);
-        }
-        return redirect('/');
+    //     if (auth()->check() && auth()->user()->isAdmin ==1) {
+    //         return $next($request);
+    //     }
+        // return redirect('/');
     }
 }

@@ -290,9 +290,9 @@
             <!-- End Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="{{url('admin/products')}}">
+                <a class="nav-link collapsed"   href="{{route('products.index')}}">
                     <i class="bi bi-menu-button-wide"></i><span>{{__('home.products')}}</span>
-                    <!-- <i class="bi bi-chevron-down ms-auto"></i> -->
+                    <i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <!-- <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
 
@@ -361,9 +361,9 @@
             <!-- End Components Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="{{url('admin/categories')}}">
+                <a class="nav-link collapsed" data-bs-target="#forms-nav" href="{{ route('categories.index') }}">
                     <i class="bi bi-journal-text"></i><span>{{__('home.categories')}}</span>
-                    <!-- <i class="bi bi-chevron-down ms-auto"></i> -->
+                    <i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <!-- <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
@@ -393,7 +393,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="{{url('admin/users')}}">
                     <i class="bi bi-layout-text-window-reverse"></i><span>{{__('home.users')}}</span>
-                    <!-- <i class="bi bi-chevron-down ms-auto"></i> -->
+                    <i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <!-- <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>

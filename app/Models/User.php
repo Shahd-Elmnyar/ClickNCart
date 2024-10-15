@@ -21,7 +21,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        
+        'otp',
+        'image',
+        'birth_date',
+        'gender',
+        'locale',
+        'is_admin',
+        'role_id',
     ];
 
     /**
@@ -50,6 +56,7 @@ class User extends Authenticatable
      */
     public function isAdmin()
     {
-        return $this->admin;
+        return $this->is_admin==1;
     }
 }
+/************Controller-route-blades */
