@@ -43,12 +43,14 @@ Route::middleware('lang')->group(function () {
         Route::view('','website.index');
         Route::view('/thankyou', 'website.thankyou');
         Route::view('/contact', 'website.contact');
+        Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
 
         //shop route
         Route::resource('shops',ShopController::class);
         //wishlist route
         Route::get('/wishlist', [WishlistController::class, 'wishlist'])->name('wishlist');
-        //Contact-Mail route
+        Route::post('/wishlist/add/{id}', [WishlistController::class, 'add'])->name('wishlist.add');
+        Route::post('wishlist/remove/{id}', [WishlistController::class, 'remove'])->name('wishlist.remove');        //Contact-Mail route
         Route::post('/contact', [ContactController::class, 'contactFormSubmit'])->name('contact.submit');
 
     //authentications routes
@@ -85,6 +87,11 @@ Route::middleware('lang')->group(function () {
             });
         });
 
+
 });
+
+
+
+
 
 

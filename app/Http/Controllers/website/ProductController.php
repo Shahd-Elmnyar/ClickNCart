@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 class ProductController extends Controller
 {
     public function show($id){
-        $product = Product::find($id);
+        $product = Product::findOrFail($id);
         return view('website.products.show', compact('product'));
     }
 }

@@ -49,16 +49,20 @@
                             <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
                                 <div class="block-4 text-center border">
                                     <figure class="block-4-image">
-                                        <a href="{{ url("shops/$product->id") }}"><img
-                                                src="{{ asset('assets/images/cloth_1.jpg') }}"
-                                                alt="{{ __('shop.image_placeholder') }}" class="img-fluid"></a>
+                                        <a href="{{ route('products.show', $product->id) }}">
+                                            <img src="{{ asset('storage/' . $product->img) }}" alt="{{ $product->name }}" class="img-fluid">
+                                        </a>
                                     </figure>
                                     <div class="block-4-text p-4">
-                                        <h3><a href="{{ url('shop-single') }}">{{ __('shop.tank_top') }}</a></h3>
-                                        <p class="mb-0">{{ __('shop.finding_perfect', ['item' => __('shop.t_shirt')]) }}
-                                        </p>
-                                        <p class="text-primary font-weight-bold">
-                                            {{ __('shop.price_format', ['price' => 50]) }}</p>
+                                        <h3><a href="{{ route('products.show', $product->id) }}">{{ $product->name }}</a></h3>
+                                        <p class="mb-0">{{ Str::limit($product->content, 50) }}</p>
+                                        <p class="text-primary font-weight-bold">${{ $product->price }}</p>
+                                        <form action="{{ route('wishlist.add', $product->id) }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn btn-sm btn-outline-primary">
+                                                <i class="icon-heart-o"></i>
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -161,3 +165,5 @@
         </div>
     </div>
 @endsection
+
+
