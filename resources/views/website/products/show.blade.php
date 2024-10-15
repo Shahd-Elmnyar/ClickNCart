@@ -1,17 +1,17 @@
 @extends('website.layout')
-@section('title', $product->name)
+@section('title', $product->name[auth()->user()->locale] ?? $product->name['en'] )
 @section('content')
-@include('website.components.breadcrumb', ['pageName' => $product->name])
+@include('website.components.breadcrumb', ['pageName' => $product->name[auth()->user()->locale] ?? $product->name['en']])
 
 <div class="site-section">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <img src="{{ asset('storage/' . $product->img) }}" alt="{{ $product->name }}" class="img-fluid">
+          <img src="{{ asset('storage/' . $product->img) }}" alt="{{ $product->name[auth()->user()->locale] ?? $product->name['en'] }}" class="img-fluid">
         </div>
         <div class="col-md-6">
-            <h2 class="text-black">{{ $product->name }}</h2>
-            <p>{{ $product->content }}</p>
+            <h2 class="text-black">{{ $product->name[auth()->user()->locale] ?? $product->name['en'] }}</h2>
+            <p>{{ $product->content[auth()->user()->locale] ?? $product->content['en'] }}</p>
             <p><strong class="text-primary h4">${{ $product->price }}</strong></p>
             
             <div class="mb-5">

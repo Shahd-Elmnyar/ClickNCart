@@ -3,10 +3,10 @@
 @section('content')
 @include('website.components.breadcrumb', ['pageName' => 'about'])
 
-<div class="site-section border-bottom" data-aos="fade">
+{{-- <div class="site-section border-bottom" data-aos="fade">
     <div class="container">
         <div class="row mb-5">
-            <div class="col-md-6">
+            {{-- <div class="col-md-6">
                 <div class="block-16">
                     <figure>
                         <img src={{ asset('assets/images/blog_1.jpg')}} alt="@lang('about.image_placeholder')" class="img-fluid rounded">
@@ -14,18 +14,18 @@
                                 class="ion-md-play"></span></a>
                     </figure>
                 </div>
-            </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-5">
+            </div> --}}
+            {{-- <div class="col-md-1"></div> --}}
+            {{-- <div class="col-md-5">
                 <div class="site-section-heading pt-3 mb-4">
                     <h2 class="text-black">{{ __('about.how_we_started') }}</h2>
                 </div>
                 <p>{{ __('about.start_description_1') }}</p>
                 <p>{{ __('about.start_description_2') }}</p>
-            </div>
+            </div> --
         </div>
     </div>
-</div>
+</div> --}}
 
 <div class="site-section border-bottom" data-aos="fade">
     <div class="container">
@@ -40,11 +40,11 @@
                     <div class="block-38-img">
                         <div class="block-38-header">
                             <img src={{ asset('assets/images/person_1.jpg')}} alt="@lang('about.image_placeholder')" class="mb-4">
-                            <h3 class="block-38-heading h4">{{ __('about.team_member_1_name') }}</h3>
-                            <p class="block-38-subheading">{{ __('about.team_member_1_role') }}</p>
+                            <h3 class="block-38-heading h4">Shahd Mohamed Reda Elmnyar</h3>
+                            <p class="block-38-subheading">Backend developer</p>
                         </div>
                         <div class="block-38-body">
-                            <p>{{ __('about.team_member_description') }}</p>
+                            {{-- <p>{{ __('about.team_member_description') }}</p> --}}
                         </div>
                     </div>
                 </div>
@@ -54,11 +54,11 @@
                     <div class="block-38-img">
                         <div class="block-38-header">
                             <img src={{ asset('assets/images/person_2.jpg')}} alt="@lang('about.image_placeholder')" class="mb-4">
-                            <h3 class="block-38-heading h4">{{ __('about.team_member_2_name') }}</h3>
-                            <p class="block-38-subheading">{{ __('about.team_member_2_role') }}</p>
+                            <h3 class="block-38-heading h4">Nada Reda Fathy Refaey</h3>
+                            <p class="block-38-subheading">Backend developer</p>
                         </div>
                         <div class="block-38-body">
-                            <p>{{ __('about.team_member_description') }}</p>
+                            {{-- <p>{{ __('about.team_member_description') }}</p> --}}
                         </div>
                     </div>
                 </div>
@@ -68,11 +68,11 @@
                     <div class="block-38-img">
                         <div class="block-38-header">
                             <img src={{ asset('assets/images/person_3.jpg')}} alt="@lang('about.image_placeholder')" class="mb-4">
-                            <h3 class="block-38-heading h4">{{ __('about.team_member_3_name') }}</h3>
-                            <p class="block-38-subheading">{{ __('about.team_member_3_role') }}</p>
+                            <h3 class="block-38-heading h4">Yasmin hasan kamal</h3>
+                            <p class="block-38-subheading">Backend developer</p>
                         </div>
                         <div class="block-38-body">
-                            <p>{{ __('about.team_member_description') }}</p>
+                            {{-- <p>{{ __('about.team_member_description') }}</p> --}}
                         </div>
                     </div>
                 </div>
@@ -82,11 +82,11 @@
                     <div class="block-38-img">
                         <div class="block-38-header">
                             <img src={{ asset('assets/images/person_4.jpg')}} alt="@lang('about.image_placeholder')" class="mb-4">
-                            <h3 class="block-38-heading h4">{{ __('about.team_member_4_name') }}</h3>
-                            <p class="block-38-subheading">{{ __('about.team_member_4_role') }}</p>
+                            <h3 class="block-38-heading h4">Hager Khaled sahm</h3>
+                            <p class="block-38-subheading">Backend developer</p>
                         </div>
                         <div class="block-38-body">
-                            <p>{{ __('about.team_member_description') }}</p>
+                            {{-- <p>{{ __('about.team_member_description') }}</p> --}}
                         </div>
                     </div>
                 </div>

@@ -3,8 +3,8 @@
 return [
     'title' => 'About',
     'image_placeholder' => 'Image placeholder',
-    'how_we_started' => 'How We Started',
-    'start_description_1' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius repellat, dicta at laboriosam, nemo exercitationem itaque eveniet architecto cumque, deleniti commodi molestias repellendus quos sequi hic fugiat asperiores illum. Atque, in, fuga excepturi corrupti error corporis aliquam unde nostrum quas.',
+    'how_we_started' => 'about ClickNCard Team',
+    
     'start_description_2' => 'Accusantium dolor ratione maiores est deleniti nihil? Dignissimos est, sunt nulla illum autem in, quibusdam cumque recusandae, laudantium minima repellendus.',
     'the_team' => 'The Team',
     'team_member_1_name' => 'Elizabeth Graham',
