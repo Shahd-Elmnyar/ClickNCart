@@ -45,7 +45,11 @@ Route::middleware('lang')->group(function () {
         Route::view('/thankyou', 'website.thankyou');
         Route::view('/contact', 'website.contact');
         Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
-
+        Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+        Route::post('/cart/add/{product}', [CartController::class, 'addToCart'])->name('cart.add');
+        Route::post('/cart/update/{cartItem}', [CartController::class, 'updateQuantity'])->name('cart.update');
+        Route::delete('/cart/remove/{cartItem}', [CartController::class, 'removeItem'])->name('cart.remove');
+        
         //shop route
         Route::resource('shops',ShopController::class);
         //wishlist route

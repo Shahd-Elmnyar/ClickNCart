@@ -13,7 +13,7 @@
 
                     <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
                         <div class="site-logo">
-                            <a href="{{url('')}}" class="js-logo-clone">Shoppers</a>
+                            <a href="{{url('')}}" class="js-logo-clone">ClickNCard</a>
                         </div>
                     </div>
 
@@ -52,11 +52,13 @@
                             </li>
                             <li>
                                 <a href="{{url('cart')}}" class="site-cart">
-                                <span class="icon icon-shopping_cart"></span>
-                                <span class="count">2</span>
-                            </a>
-                        </li>
-                        <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
+                                    <span class="icon icon-shopping_cart"></span>
+                                    <span class="count">
+                                        {{ auth()->check() ? auth()->user()->cart->sum(function($cart) { return $cart->items->count(); }) : 0 }}
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -65,10 +67,10 @@
         <nav class="site-navigation text-right text-md-center" role="navigation">
             <div class="container">
                 <ul class="site-menu js-clone-nav d-none d-md-block">
-                    <li class="has-children {{ Request::is('/') ? 'active' : '' }}">
+                    <li class=" {{ Request::is('/') ? 'active' : '' }}">
                         <a href="{{url('')}}">{{__('navbar.home')}}</a>
                     </li>
-                    <li class="has-children {{ Request::is('about') ? 'active' : '' }}">
+                    <li class=" {{ Request::is('about') ? 'active' : '' }}">
                         <a href="{{url('about')}}">{{__('navbar.about')}}</a>
                     </li>
                     <li class="{{ Request::is('shop') ? 'active' : '' }}"><a href="{{url('shops')}}">{{__('navbar.shop')}}</a></li>
@@ -80,5 +82,7 @@
         </nav>
     </header>
 </div>
+
+
 
 
