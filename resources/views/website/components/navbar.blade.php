@@ -52,11 +52,13 @@
                             </li>
                             <li>
                                 <a href="{{url('cart')}}" class="site-cart">
-                                <span class="icon icon-shopping_cart"></span>
-                                <span class="count">2</span>
-                            </a>
-                        </li>
-                        <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
+                                    <span class="icon icon-shopping_cart"></span>
+                                    <span class="count">
+                                        {{ auth()->check() ? auth()->user()->cart->sum(function($cart) { return $cart->items->count(); }) : 0 }}
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -80,5 +82,7 @@
         </nav>
     </header>
 </div>
+
+
 
 

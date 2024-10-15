@@ -57,11 +57,15 @@
                                         <h3><a href="{{ route('products.show', $product->id) }}">{{ $product->name[auth()->user()->locale] ?? $product->name['en'] }}</a></h3>
                                         <p class="mb-0">{{ Str::limit($product->content[auth()->user()->locale]??$product->content['en'], 50) }}</p>
                                         <p class="text-primary font-weight-bold">${{ $product->price }}</p>
-                                        <form action="{{ route('wishlist.add', $product->id) }}" method="POST">
+                                        <form action="{{ route('wishlist.add', $product->id) }}" method="POST" class="d-inline">
                                             @csrf
                                             <button type="submit" class="btn btn-sm btn-outline-primary">
                                                 <i class="icon-heart-o"></i>
                                             </button>
+                                        </form>
+                                        <form action="{{ route('cart.add', $product->id) }}" method="POST" class="d-inline">
+                                            @csrf
+                                            <button type="submit" class="btn btn-sm btn-primary"><i class="icon-shopping-cart"></i></button>
                                         </form>
                                     </div>
                                 </div>
@@ -123,25 +127,7 @@
                             </label>
                         </div>
 
-                        <div class="mb-4">
-                            <h3 class="mb-3 h6 text-uppercase text-black d-block">{{ __('shop.color') }}</h3>
-                            <a href="#" class="d-flex color-item align-items-center">
-                                <span class="bg-danger color d-inline-block rounded-circle mr-2"></span> <span
-                                    class="text-black">{{ __('shop.red') }} (2,429)</span>
-                            </a>
-                            <a href="#" class="d-flex color-item align-items-center">
-                                <span class="bg-success color d-inline-block rounded-circle mr-2"></span> <span
-                                    class="text-black">{{ __('shop.green') }} (2,298)</span>
-                            </a>
-                            <a href="#" class="d-flex color-item align-items-center">
-                                <span class="bg-info color d-inline-block rounded-circle mr-2"></span> <span
-                                    class="text-black">{{ __('shop.blue') }} (1,075)</span>
-                            </a>
-                            <a href="#" class="d-flex color-item align-items-center">
-                                <span class="bg-primary color d-inline-block rounded-circle mr-2"></span> <span
-                                    class="text-black">{{ __('shop.purple') }} (1,075)</span>
-                            </a>
-                        </div>
+                       
 
                     </div>
                 </div>
@@ -165,5 +151,6 @@
         </div>
     </div>
 @endsection
+
 
 
