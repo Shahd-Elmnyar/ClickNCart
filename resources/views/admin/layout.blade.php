@@ -345,6 +345,16 @@
                     <!-- <i class="bi bi-chevron-down ms-auto"></i> -->
                 </a>
                 @endif
+            </li>
+            <li class="nav-item">
+                @if(Auth::user()->role->name == 'super_admin')
+                <a class="nav-link collapsed" href="{{url('admin/messages')}}">
+                    <i class="bi bi-envelope"></i></i><span>{{__('home.messages')}}</span>
+                    <!-- <i class="bi bi-chevron-down ms-auto"></i> -->
+                </a>
+                @endif
+            </li>
+
 
 
             <li class="nav-heading">{{__('home.pages')}}</li>
