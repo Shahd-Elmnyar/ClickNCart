@@ -7,9 +7,15 @@
                 @foreach ($categories as $category)
                     <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay="">
                         <a class="block-2-item" href="{{url("showCategory/$category->id")}}">
-                            <figure class="image">
-                                <img src="{{asset('uploads/'.$category->img)}}" alt="" class="img-fluid">
-                            </figure>
+                                <figure class="image">
+                                    @if ($category->img)
+                                    <img src="{{ asset('storage/' . $category->img) }}"
+                                    alt="{{ $category->name }}"
+                                    class="img-fluid">
+                                    @else
+                                        No image
+                                    @endif
+                                </figure>
                             <div class="text">
                                 <span class="text-uppercase">{{$category->name}}</span>
                                 <h3>{{$category->content}}</h3>
