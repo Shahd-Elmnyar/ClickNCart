@@ -6,7 +6,7 @@
 
         <div class="pagetitle">
             <h1>{{ __('categories.categories') }}</h1>
-            @include('admin.components.breadcrumb', ['pageName' => 'Categories'])
+            @include('admin.components.breadcrumb', ['pageName' => __('categories.categories')])
         </div><!-- End Page Title -->
 
         <section class="section">

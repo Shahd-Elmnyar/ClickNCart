@@ -240,7 +240,7 @@
                         <li>
                             <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
                                 <i class="bi bi-person"></i>
-                                <span>My Profile</span>
+                                <span>{{__('home.profile')}}</span>
                             </a>
                         </li>
                         <li>
@@ -270,7 +270,7 @@
                         <li>
                             <a class="dropdown-item d-flex align-items-center" href="#">
                                 <i class="bi bi-box-arrow-right"></i>
-                                <span>Sign Out</span>
+                                <span>{{__('navbar.logout')}}</span>
                             </a>
                         </li>
                         <li>
@@ -281,9 +281,9 @@
                         </li>
                         <li>
                         @if($lang=='ar')
-                        <a class="dropdown-item" href="{{url('lang/set/en')}}">En</a>
+                        <a class="dropdown-item" href="{{url('lang/set/en')}}">{{__('navbar.en')}}</a>
                         @else
-                        <a class="dropdown-item" href="{{url('lang/set/ar')}}">ع</a>
+                        <a class="dropdown-item" href="{{url('lang/set/ar')}}">{{__('navbar.ar')}}</a>
                         @endif
                         </li>
 
@@ -333,11 +333,11 @@
             <li class="nav-item">
                 <a class="nav-link collapsed"  href="{{url('admin/products')}}">
                     <i class="bi bi-box-seam"></i>
-                    
+
                     <span>{{__('home.products')}}</span>
                     <!-- <i class="bi bi-chevron-down ms-auto"></i> -->
                 </a>
-            </li>            
+            </li>
             <li class="nav-item">
                 @if(Auth::user()->role->name == 'super_admin')
                 <a class="nav-link collapsed" href="{{url('admin/users')}}">
@@ -367,7 +367,7 @@
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
         <div class="copyright">
-            &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+            {{__('home.copy_rights')}}&copy;
         </div>
         <div class="credits">
             <!-- All the links in the footer should remain intact. -->

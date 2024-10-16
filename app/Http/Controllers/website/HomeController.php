@@ -13,6 +13,6 @@ class HomeController extends Controller
     }
     public function showCategory($id){
         $category = Category::findOrFail($id);
-        return view('website.', compact('category'));
+        return view('website.products.show', compact('category'));
     }
 }

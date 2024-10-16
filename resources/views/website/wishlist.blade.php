@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-12 text-center">
-                    <h2 class="display-4 text-black">My Wishlist</h2>
+                    <h2 class="display-4 text-black">{{__('home.wishlist')}}</h2>
                 </div>
             </div>
             <div class="row mb-5">
@@ -32,8 +32,8 @@
                     </div>
                 @empty
                     <div class="col-md-12 text-center">
-                        <p class="lead mb-5">There are no products in this wishlist.</p>
-                        <p><a href="{{ url('shops') }}" class="btn btn-sm btn-primary">Add items to your wishlist!</a></p>
+                        <p class="lead mb-5">{{__('home.no_wishlist')}}</p>
+                        <p><a href="{{ url('shops') }}" class="btn btn-sm btn-primary">{{__('home.add_wishlist')}}!</a></p>
                     </div>
                 @endforelse
             </div>

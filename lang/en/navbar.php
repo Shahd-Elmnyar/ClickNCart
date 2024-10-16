@@ -39,5 +39,6 @@ return [
     'copyright' => 'Copyright',
     'all_rights_reserved' => 'All rights reserved',
     'template_made_by' => 'This template is made with',
-
+    'en'  => 'English',
+    'ar'  => 'Arabic',
 ];

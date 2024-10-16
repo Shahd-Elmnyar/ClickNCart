@@ -41,9 +41,9 @@
                                         </form>
                                         @endauth
                                         @if($lang=='ar')
-                                        <a class="dropdown-item" href="{{url('lang/set/en')}}">En</a>
+                                        <a class="dropdown-item" href="{{url('lang/set/en')}}">{{__('navbar.en')}}</a>
                                         @else
-                                        <a class="dropdown-item" href="{{url('lang/set/ar')}}">ع</a>
+                                        <a class="dropdown-item" href="{{url('lang/set/ar')}}">{{__('navbar.ar')}}</a>
                                         @endif
                                     </div>
                                 </li>
