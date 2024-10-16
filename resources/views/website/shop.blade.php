@@ -50,12 +50,12 @@
                                 <div class="block-4 text-center border">
                                     <figure class="block-4-image">
                                         <a href="{{ route('products.show', $product->id) }}">
-                                            <img src="{{ asset('storage/' . $product->img) }}" alt="{{ $product->name[auth()->user()->locale] ?? $product->name['en'] }}" class="img-fluid">
+                                            <img src="{{ asset('storage/' . $product->img) }}" alt="{{ $product->name[auth()->check() ? auth()->user()->locale : 'en'] ?? $product->name['en'] }}" class="img-fluid">
                                         </a>
                                     </figure>
                                     <div class="block-4-text p-4">
-                                        <h3><a href="{{ route('products.show', $product->id) }}">{{ $product->name[auth()->user()->locale] ?? $product->name['en'] }}</a></h3>
-                                        <p class="mb-0">{{ Str::limit($product->content[auth()->user()->locale]??$product->content['en'], 50) }}</p>
+                                        <h3><a href="{{ route('products.show', $product->id) }}">{{ $product->name[auth()->check() ? auth()->user()->locale : 'en'] ?? $product->name['en'] }}</a></h3>
+                                        <p class="mb-0">{{ Str::limit($product->content[auth()->check() ? auth()->user()->locale : 'en']??$product->content['en'], 50) }}</p>
                                         <p class="text-primary font-weight-bold">${{ $product->price }}</p>
                                         <form action="{{ route('wishlist.add', $product->id) }}" method="POST" class="d-inline">
                                             @csrf
@@ -151,6 +151,7 @@
         </div>
     </div>
 @endsection
+
 
 
 

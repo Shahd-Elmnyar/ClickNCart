@@ -22,7 +22,6 @@ return new class extends Migration
             $table->double('discount')->nullable();
             $table->tinyInteger('active')->default(1);
             $table->tinyInteger('featured')->default(1);
-            //rate
             $table->foreignId('category_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });

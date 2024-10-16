@@ -325,12 +325,6 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed"  href="{{url('admin/subCategories')}}">
-                    <i class="bi bi-menu-button-wide"></i><span>{{__('home.subCategories')}}</span>
-                    <!-- <i class="bi bi-chevron-down ms-auto"></i> -->
-                </a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link collapsed"  href="{{url('admin/products')}}">
                     <i class="bi bi-box-seam"></i>
 

@@ -23,10 +23,10 @@
                             @forelse ($cart->items as $item)
                                 <tr>
                                     <td class="product-thumbnail">
-                                        <img src="{{ asset('storage/' . $item->product->img) }}" alt="{{ $item->product->name[auth()->user()->locale] ?? $item->product->name['en'] }}" class="img-fluid">
+                                        <img src="{{ asset('storage/' . $item->product->img) }}" alt="{{ $item->product->name[auth()->check() ? auth()->user()->locale : 'en'] ?? $item->product->name['en'] }}" class="img-fluid">
                                     </td>
                                     <td class="product-name">
-                                        <h2 class="h5 text-black">{{ $item->product->name[auth()->user()->locale] ?? $item->product->name['en'] }}</h2>
+                                        <h2 class="h5 text-black">{{ $item->product->name[auth()->check() ? auth()->user()->locale : 'en'] ?? $item->product->name['en'] }}</h2>
                                     </td>
                                     <td>${{ $item->price }}</td>
                                     <td>

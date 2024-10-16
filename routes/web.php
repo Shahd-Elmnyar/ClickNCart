@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\website\ThanksController;
 use App\Http\Controllers\website\ContactController;
 use App\Http\Controllers\website\ProductController;
+use App\Http\Controllers\admin\ProductController as AdminProductController;
 use App\Http\Controllers\website\CheckoutController;
 use App\Http\Controllers\website\WishlistController;
 use App\Http\Controllers\admin\HomeController as AdminHomeController;
@@ -81,6 +82,10 @@ Route::middleware('lang')->group(function () {
                     Route::get('/categories-trashed', [CategoryController::class, 'trashed'])->name('categories.trashed');
                     Route::post('/categories/{id}/restore', [CategoryController::class, 'restore'])->name('categories.restore');
                     Route::delete('/categories/{id}/force-delete', [CategoryController::class, 'forceDelete'])->name('categories.forceDelete');
+                    Route::resource('products', AdminProductController::class);
+                    Route::get('/products-trashed', [AdminProductController::class, 'trashed'])->name('products.trashed');
+                    Route::post('/products/{id}/restore', [AdminProductController::class, 'restore'])->name('products.restore');
+                    Route::delete('/products/{id}/force-delete', [AdminProductController::class, 'forceDelete'])->name('products.forceDelete');
                     Route::get('messages', [AdminContactController::class, 'index'])->name('admin.messages');
 
                     Route::middleware('superAdmin')->group(function () {
