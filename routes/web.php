@@ -1,9 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\website\CartController;
 // use App\Http\Controllers\website\HomeController;//uncommented
 use App\Http\Controllers\website\ShopController;
+use App\Http\Controllers\website\AboutController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\website\ThanksController;
 use App\Http\Controllers\Admin\HomeController;//remove it
 use App\Http\Controllers\Admin\CategoryController;

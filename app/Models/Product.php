@@ -11,6 +11,14 @@ class Product extends Model
     use HasFactory,SoftDeletes;
     protected $fillable = ['name', 'content', 'img', 'price', 'offer_price', 'discount_type', 'discount', 'active', 'category_id', 'created_by'];
   // Relationship to the Category model
+  protected $casts = [
+    'name' =>'array',
+    'content' =>'array',
+];
+
+public function favorites(){
+    return $this->hasMany(Favorite::class);
+}
   public function category()
   {
       return $this->belongsTo(Category::class);

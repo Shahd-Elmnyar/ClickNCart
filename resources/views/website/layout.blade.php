@@ -1,12 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-
+@php
+    if(!auth()->check()){
+        $lang = 'en';
+        $Dir = 'ltr';
+    }else{
+        $lang = auth()->user()->locale;
+        if($lang == 'ar'){
+            $Dir = 'rtl';
+        }else{
+            $Dir = 'ltr';
+        }
+    }
+@endphp
+<html lang="{{$lang}}" dir="{{$Dir}}">
 <head>
-    <title>@yield('title')</title>
+    <title>@yield('title')-shopper</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href=" {{ asset('assets/fonts/icomoon/style.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css')}}">
@@ -23,6 +36,9 @@
 
 <body>
     @include('website.components.navbar')
+    @yield('content')
+    @include('website.components.footer')
+    {{-- <h1>{{ __('messages.welcome') }}</h1> --}}
     <script src="{{ asset('assets/js/bootstrap.min.css')}}"></script>
     <script src="{{ asset('assets/js/jquery-3.3.1.min.js')}}"></script>
     <script src="{{ asset('assets/js/jquery-ui.js')}}"></script>
@@ -32,6 +48,7 @@
     <script src="{{ asset('assets/js/jquery.magnific-popup.min.js')}}"></script>
     <script src="{{ asset('assets/js/aos.js')}}"></script>
     <script src="{{ asset('assets/js/main.js')}}"></script>
+    @yield ('scripts')
 
 </body>
 

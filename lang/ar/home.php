@@ -1,22 +1,45 @@
 <?php
 
 return [
-
-    /*
-    |--------------------------------------------------------------------------
-    | Pagination Language Lines
-    |--------------------------------------------------------------------------
-    |
-    | The following language lines are used by the paginator library to build
-    | the simple pagination links. You are free to change them to anything
-    | you want to customize your views to better match your application.
-    |
-    */
-
+    'shop'=>'المتجر',
+    'cart'=>'العربه',
+    'Shop Single'=>'عرض المنتج',
+    'Contact Us' =>'تواصل معنا',
+    'bigSale' =>'اعلي خصومات',
+    'about' =>'عن الموقع',
+    'home' => 'الرئيسية',
+    'view_admin_dashboard' => 'عرض لوحة التحكم',
+    'finding_perfect_shoes' => 'اعثر على حذائك المثالي',
+    'hero_description' => 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى.',
+    'shop_now' => 'تسوق الآن',
+    'free_shipping' => 'شحن مجاني',
+    'free_shipping_description' => 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى.',
+    'free_returns' => 'إرجاع مجاني',
+    'free_returns_description' => 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى.',
+    'customer_support' => 'دعم العملاء',
+    'customer_support_description' => 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى.',
+    'collections' => 'مجموعات',
+    'women' => 'نساء',
+    'children' => 'أطفال',
+    'men' => 'رجال',
+    'big_sale' => 'تخفيضات كبيرة!',
+    'sale_title' => 'خصم 50٪ على جميع المنتجات',
+    'sale_meta' => 'بواسطة :author <span class="block-8-sep">&bullet;</span> :date',
+    'sale_description' => 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى.',
     'dashboard' => 'لوحة التحكم',
     'products' => 'المنتجات',
     'users' => 'المستخدمين',
     'categories' => 'التصنيفات',
     'pages' => 'الصفحات',
     'profile' => 'الملف الشخصي',
+    'sale_discount' => 'خصم 50٪ على جميع المنتجات',
+    'sale_meta' => 'بواسطة :author <span class="block-8-sep">&bullet;</span> :date',
+    'sale_description' => 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى.',
+    'messages' => 'الرسائل',
+    'contact' => 'التواصل',
+    'contact_description' => 'هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى.',
+    'backWebsite' => 'العودة للموقع',
+    'subCategories' => 'التصنيفات الفرعية',
+    'wishlist' =>  'قائمة المفضلات',
+
 ];

@@ -13,6 +13,17 @@
   scroll-behavior: smooth;
 }
 
+:root {
+  --sidebar-margin: 100px 0 0 0;
+}
+
+:lang(en) {
+  --sidebar-margin: 100px 0 0 300px;
+}
+
+:lang(ar) {
+  --sidebar-margin: 100px 300px 0 0;
+}
 body {
   font-family: "Open Sans", sans-serif;
   background: #f6f9ff;
@@ -600,7 +611,7 @@ h6 {
 .sidebar {
   position: fixed;
   top: 60px;
-  left: 0;
+  /* left: 0; */
   bottom: 0;
   width: 300px;
   z-index: 996;
@@ -633,7 +644,7 @@ h6 {
 
   #main,
   #footer {
-    margin-left: 300px;
+    margin:var(--sidebar-margin)
   }
 }
 

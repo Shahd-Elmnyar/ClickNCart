@@ -5,7 +5,6 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -18,25 +17,16 @@ class SetAppLang
      */
     public function handle(Request $request, Closure $next): Response
     {
-
-        $request->setLaravelSession(session());
-
         if (Auth::check()) {
-            $userLang = Auth::user()->lang;
-
-            if (in_array($userLang, config('app.available_locales'))) {
-                App::setLocale($userLang);
-            } else {
-                abort(400, 'User language not available');
-            }
+            // Use authenticated user's locale
+            $lang = Auth::user()->locale ?? 'en';
         } else {
-            $userLang = $request->session()->get('locale', config('app.fallback_locale'));
-            if (in_array($userLang, config('app.available_locales'))) {
-                App::setLocale($userLang);
-            } else {
-                App::setLocale(config('app.fallback_locale'));
-            }
+            // Use session language or default to 'en'
+            $lang = $request->session()->get('lang', 'en');
         }
+
+        App::setLocale($lang);
+
         return $next($request);
     }
 }

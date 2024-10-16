@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'create_new_category' => 'Create New Category',
+    'name' => 'Name',
+    'description' => 'Description',
+    'content' => 'Content',
+    'image' => 'Image',
+    'create_category' => 'Create Category',
+    'back' => 'Back',
+    'edit_category' => 'Edit Category',
+    'update_category' => 'Update Category',
+    'categories' => 'Categories',
+    'add_category' => 'Add Category',
+    'view_trashed_categories' => 'View Trashed Categories',
+    'id' => 'ID',
+    'action' => 'Action',
+    'confirm_trash' => 'Are you sure you want to move this category to trash?',
+    'trash' => 'Trash',
+    'show_category' => 'Show Category: :name',
+    'category_not_found' => 'Category Not Found',
+    'trashed_categories' => 'Trashed Categories',
+    'no_trashed_categories' => 'No trashed categories found.',
+    'actions' => 'Actions',
+    'restore' => 'Restore',
+    'confirm_permanent_delete' => 'Are you sure you want to permanently delete this category? This action cannot be undone.',
+    'delete_permanently' => 'Delete Permanently',
+];
