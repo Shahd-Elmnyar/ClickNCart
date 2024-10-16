@@ -17,7 +17,7 @@ use App\Http\Controllers\website\WishlistController;
 use App\Http\Controllers\admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\ContactController as AdminContactController;
 use App\Http\Controllers\Admin\HomeController;//remove it
-use App\Http\Controllers\ProductController;
+
 
 /*
 |--------------------------------------------------------------------------
