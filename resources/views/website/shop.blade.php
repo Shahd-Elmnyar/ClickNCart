@@ -5,10 +5,8 @@
 
     <div class="site-section">
         <div class="container">
-
             <div class="row mb-5">
                 <div class="col-md-9 order-2">
-
                     <div class="row">
                         <div class="col-md-12 mb-5">
                             <div class="float-md-left mb-4">
@@ -22,29 +20,17 @@
                                         {{ __('shop.latest') }}
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-                                        <a class="dropdown-item" href="#">{{ __('shop.men') }}</a>
-                                        <a class="dropdown-item" href="#">{{ __('shop.women') }}</a>
-                                        <a class="dropdown-item" href="#">{{ __('shop.children') }}</a>
-                                    </div>
-                                </div>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-secondary btn-sm dropdown-toggle"
-                                        id="dropdownMenuReference"
-                                        data-toggle="dropdown">{{ __('shop.reference') }}</button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
-                                        <a class="dropdown-item" href="#">{{ __('shop.relevance') }}</a>
-                                        <a class="dropdown-item" href="#">{{ __('shop.name_a_to_z') }}</a>
-                                        <a class="dropdown-item" href="#">{{ __('shop.name_z_to_a') }}</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">{{ __('shop.price_low_to_high') }}</a>
-                                        <a class="dropdown-item" href="#">{{ __('shop.price_high_to_low') }}</a>
+                                        <a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['sort' => 'latest']) }}">{{ __('shop.latest') }}</a>
+                                        <a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['sort' => 'name_asc']) }}">{{ __('shop.name_a_to_z') }}</a>
+                                        <a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['sort' => 'name_desc']) }}">{{ __('shop.name_z_to_a') }}</a>
+                                        <a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['sort' => 'price_asc']) }}">{{ __('shop.price_low_to_high') }}</a>
+                                        <a class="dropdown-item" href="{{ request()->fullUrlWithQuery(['sort' => 'price_desc']) }}">{{ __('shop.price_high_to_low') }}</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row mb-5">
-
                         @foreach ($products as $product)
                             <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
                                 <div class="block-4 text-center border">
@@ -71,21 +57,10 @@
                                 </div>
                             </div>
                         @endforeach
-
                     </div>
                     <div class="row" data-aos="fade-up">
                         <div class="col-md-12 text-center">
-                            <div class="site-block-27">
-                                <ul>
-                                    <li><a href="#">&lt;</a></li>
-                                    <li class="active"><span>1</span></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li><a href="#">&gt;</a></li>
-                                </ul>
-                            </div>
+                            {{ $products->links() }}
                         </div>
                     </div>
                 </div>
@@ -94,12 +69,14 @@
                     <div class="border p-4 rounded mb-4">
                         <h3 class="mb-3 h6 text-uppercase text-black d-block">{{ __('shop.categories') }}</h3>
                         <ul class="list-unstyled mb-0">
-                            <li class="mb-1"><a href="#" class="d-flex"><span>{{ __('shop.men') }}</span> <span
-                                        class="text-black ml-auto">(2,220)</span></a></li>
-                            <li class="mb-1"><a href="#" class="d-flex"><span>{{ __('shop.women') }}</span>
-                                    <span class="text-black ml-auto">(2,550)</span></a></li>
-                            <li class="mb-1"><a href="#" class="d-flex"><span>{{ __('shop.children') }}</span>
-                                    <span class="text-black ml-auto">(2,124)</span></a></li>
+                            @foreach($categories as $category)
+                                <li class="mb-1">
+                                    <a href="{{ request()->fullUrlWithQuery(['category' => $category->id]) }}" class="d-flex">
+                                        <span>{{ $category->name}}</span>
+                                        <span class="text-black ml-auto">({{ $category->products_count }})</span>
+                                    </a>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
 
@@ -107,28 +84,22 @@
                         <div class="mb-4">
                             <h3 class="mb-3 h6 text-uppercase text-black d-block">{{ __('shop.filter_by_price') }}</h3>
                             <div id="slider-range" class="border-primary"></div>
-                            <input type="text" name="text" id="amount" class="form-control border-0 pl-0 bg-white"
-                                disabled="" />
+                            <input type="text" name="text" id="amount" class="form-control border-0 pl-0 bg-white" disabled="" />
                         </div>
 
                         <div class="mb-4">
                             <h3 class="mb-3 h6 text-uppercase text-black d-block">{{ __('shop.size') }}</h3>
-                            <label for="s_sm" class="d-flex">
-                                <input type="checkbox" id="s_sm" class="mr-2 mt-1"> <span
-                                    class="text-black">{{ __('shop.small') }} (2,319)</span>
-                            </label>
-                            <label for="s_md" class="d-flex">
-                                <input type="checkbox" id="s_md" class="mr-2 mt-1"> <span
-                                    class="text-black">{{ __('shop.medium') }} (1,282)</span>
-                            </label>
-                            <label for="s_lg" class="d-flex">
-                                <input type="checkbox" id="s_lg" class="mr-2 mt-1"> <span
-                                    class="text-black">{{ __('shop.large') }} (1,392)</span>
-                            </label>
+                            @foreach(['small', 'medium', 'large'] as $size)
+                                <label for="s_{{ $size }}" class="d-flex">
+                                    <input type="checkbox" id="s_{{ $size }}" name="sizes[]" value="{{ $size }}" class="mr-2 mt-1">
+                                    <span class="text-black">{{ __('shop.' . $size) }}</span>
+                                </label>
+                            @endforeach
                         </div>
 
-                       
-
+                        <div class="mb-4">
+                            <button id="apply-filters" class="btn btn-primary btn-sm">{{ __('shop.apply_filters') }}</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -147,11 +118,58 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 @endsection
 
+@section('scripts')
 
+<script>
+    $(document).ready(function() {
+        var minPrice = {{ request('min_price', 0) }};
+        var maxPrice = {{ request('max_price', 1000) }};
 
+        $("#slider-range").slider({
+            range: true,
+            min: 0,
+            max: 1000,
+            values: [minPrice, maxPrice],
+            slide: function(event, ui) {
+                $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+            }
+        });
 
+        $("#amount").val("$" + $("#slider-range").slider("values", 0) +
+            " - $" + $("#slider-range").slider("values", 1));
+
+        $('#apply-filters').click(function() {
+            var minPrice = $("#slider-range").slider("values", 0);
+            var maxPrice = $("#slider-range").slider("values", 1);
+            var sizes = $('input[name="sizes[]"]:checked').map(function() {
+                return this.value;
+            }).get();
+
+            var url = new URL(window.location.href);
+            url.searchParams.set('min_price', minPrice);
+            url.searchParams.set('max_price', maxPrice);
+            if (sizes.length > 0) {
+                url.searchParams.set('sizes', sizes.join(','));
+            } else {
+                url.searchParams.delete('sizes');
+            }
+
+            window.location.href = url.toString();
+        });
+
+        // Set checkboxes based on URL parameters
+        var sizesParam = new URLSearchParams(window.location.search).get('sizes');
+        if (sizesParam) {
+            var selectedSizes = sizesParam.split(',');
+            selectedSizes.forEach(function(size) {
+                $('input[name="sizes[]"][value="' + size + '"]').prop('checked', true);
+            });
+        }
+    });
+</script>
+
+@endsection
