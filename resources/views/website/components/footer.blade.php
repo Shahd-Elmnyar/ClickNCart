@@ -50,10 +50,11 @@
                 </div>
 
                 <div class="block-7">
-                    <form action="#" method="post">
+                    <form method="POST" action="/newsletter" >
+                        @csrf
                         <label for="email_subscribe" class="footer-heading">{{ __('navbar.subscribe') }}</label>
                         <div class="form-group">
-                            <input type="text" class="form-control py-4" id="email_subscribe" placeholder="{{ __('navbar.email') }}">
+                            <input name ="email" type="text" class="form-control py-4" id="email_subscribe" placeholder="{{ __('navbar.email') }}">
                             <input type="submit" class="btn btn-sm btn-primary" value="{{ __('navbar.send') }}">
                         </div>
                     </form>

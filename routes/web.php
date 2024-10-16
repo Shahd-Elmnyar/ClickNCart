@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\website\CartController;
 use App\Http\Controllers\website\HomeController;
 use App\Http\Controllers\website\LangController;
@@ -13,9 +14,9 @@ use App\Http\Controllers\website\ThanksController;
 use App\Http\Controllers\website\ContactController;
 use App\Http\Controllers\website\ProductController;
 use App\Http\Controllers\website\CheckoutController;
+use App\Http\Controllers\website\WishlistController;
 use App\Http\Controllers\admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\ContactController as AdminContactController;
-use App\Http\Controllers\website\WishlistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,7 +50,7 @@ Route::middleware('lang')->group(function () {
         Route::post('/cart/add/{product}', [CartController::class, 'addToCart'])->name('cart.add');
         Route::post('/cart/update/{cartItem}', [CartController::class, 'updateQuantity'])->name('cart.update');
         Route::delete('/cart/remove/{cartItem}', [CartController::class, 'removeItem'])->name('cart.remove');
-        
+        Route::post('newsletter', NewsletterController::class);
         //shop route
         Route::resource('shops',ShopController::class);
         //wishlist route
