@@ -10,7 +10,6 @@ use App\Http\Controllers\website\AboutController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\website\ThanksController;
 use App\Http\Controllers\Admin\HomeController;//remove it
-use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\ProductController;
 
 /*

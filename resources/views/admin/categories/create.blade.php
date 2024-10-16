@@ -1,5 +1,5 @@
 @extends('admin.layout')
-@section('title', 'Create Category')
+@section('title', content: 'Create Category')
 @section('content')
 <main id="main" class="main">
     @include('admin.components.breadcrumb',['pageName'=>'Create Category'])
@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="description" class="col-sm-2 col-form-label">{{ __('categories.description') }}</label>
+                        <label for="description" class="col-sm-2 col-form-label">{{ __(key: 'categories.description') }}</label>
                         <div class="col-sm-10">
                             <textarea class="form-control" name="content" id="description" required></textarea>
                         </div>
