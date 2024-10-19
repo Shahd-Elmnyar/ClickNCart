@@ -13,6 +13,11 @@ class CartController extends Controller
     public function index()
     {
         $cart = Cart::where('user_id', auth()->id())->with('items.product')->first();
+        if (!$cart) {
+            $cart = new Cart();
+            $cart->items = collect(); 
+            $cart->total_price = 0;
+        }
         return view('website.cart', compact('cart'));
     }
 

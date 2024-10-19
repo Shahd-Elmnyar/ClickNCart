@@ -16,9 +16,9 @@
 @endphp
 {{-- <a href="{{ route('admin.index') }}">View Admin Dashboard</a> --}}
 @if ($lang == 'ar')
-    <div class="site-blocks-cover" style="background-image: url('{{ asset('assets/images/rtlHero.png') }}');" data-aos="fade">
+    <div class="site-blocks-cover" style="background-image: url('{{ asset('assets/images/rtl.jpg') }}');" data-aos="fade">
 @else
-    <div class="site-blocks-cover" style="background-image: url('{{ asset('assets/images/hero_1.jpg') }}');" data-aos="fade">
+    <div class="site-blocks-cover" style="background-image: url('{{ asset('assets/images/ltr.png') }}');" data-aos="fade">
 @endif
     <div class="container">
         <div class="row align-items-start align-items-md-center justify-content-end">
@@ -29,7 +29,7 @@
                         Whether you’re looking for the latest gadgets or the trendiest outfits, we have it all! With thousands of products from top vendors, finding exactly what you need has never been easier.
                         
                     <p>
-                        <a href="#" class="btn btn-sm btn-primary">{{ __('home.shop_now') }}</a>
+                        <a  href="{{url('shops')}}" class="btn btn-sm btn-primary">{{ __('home.shop_now') }}</a>
                     </p>
                 </div>
             </div>

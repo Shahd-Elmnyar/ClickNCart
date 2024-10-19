@@ -13,4 +13,5 @@ return [
     'london' => 'London',
     'canada' => 'Canada',
     'fake_address' => '203 Fake St. Mountain View, San Francisco, California, USA',
+    'subject' => 'Subject',
 ];

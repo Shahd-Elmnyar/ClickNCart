@@ -39,8 +39,8 @@
                 <div class="block-38 text-center">
                     <div class="block-38-img">
                         <div class="block-38-header">
-                            <img src={{ asset('assets/images/person_1.jpg')}} alt="@lang('about.image_placeholder')" class="mb-4">
-                            <h3 class="block-38-heading h4">Shahd Mohamed Reda Elmnyar</h3>
+                            <img src={{ asset('assets/images/shahd.jpg')}} alt="@lang('about.image_placeholder')" class="mb-4">
+                            <h3 class="block-38-heading h4">Shahd Mohamed Elmnyar</h3>
                             <p class="block-38-subheading">Backend developer</p>
                         </div>
                         <div class="block-38-body">

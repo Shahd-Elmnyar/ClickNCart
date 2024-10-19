@@ -24,7 +24,7 @@
             <div class="p-3 p-lg-5 border ">
               <div class="form-group row">
                 <div class="col-md-12">
-                  <label for="title" class="text-black">{{ __('contact.title') }}</label>
+                  <label for="title" class="text-black">{{ __('contact.subject') }}</label>
                   <input type="text" class="form-control" id="title" name="title">
                   @error('title')  <span class="text-danger">{{ $message }}</span> @enderror
                 </div>
