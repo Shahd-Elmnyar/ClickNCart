@@ -18,12 +18,13 @@ return new class extends Migration
             $table->string('img');
             $table->double('price');
             $table->double('offer_price')->nullable();
-            $table->string('discount_type');
+            $table->string('discount_type')->default('percentage');
             $table->double('discount')->nullable();
             $table->tinyInteger('active')->default(1);
-            $table->tinyInteger('featured')->default(1);
+            $table->tinyInteger('featured')->default(0);
             $table->foreignId('category_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

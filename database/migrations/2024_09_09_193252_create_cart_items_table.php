@@ -19,7 +19,7 @@ return new class extends Migration
             $table->tinyInteger('active')->default(1);
             $table->foreignId('cart_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('product_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('size_id')->constrained()->onDelete('cascade')->onUpdate('cascade')->default(1);
+            $table->foreignId('size_id')->nullable()->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

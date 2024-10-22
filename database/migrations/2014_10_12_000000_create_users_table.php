@@ -24,8 +24,9 @@ return new class extends Migration
             $table->string('locale')->default('en');
             $table->tinyInteger('is_admin')->default(0);
             $table->rememberToken();
-            $table->foreignId('role_id')->default(2)->constrained()->nullable();
+            $table->foreignId('role_id')->default(2)->constrained();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
