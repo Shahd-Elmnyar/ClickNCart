@@ -49,7 +49,7 @@
                     </ul>
                 </div>
 
-                <div class="block-7">
+                {{-- <div class="block-7">
                     <form method="POST" action="/newsletter" >
                         @csrf
                         <label for="email_subscribe" class="footer-heading">{{ __('navbar.subscribe') }}</label>
@@ -58,7 +58,7 @@
                             <input type="submit" class="btn btn-sm btn-primary" value="{{ __('navbar.send') }}">
                         </div>
                     </form>
-                </div>
+                </div> --}}
             </div>
         </div>
         <div class="row pt-5 mt-5 text-center">

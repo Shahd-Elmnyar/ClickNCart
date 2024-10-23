@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -42,23 +43,31 @@ class UserController extends Controller
                     'regex:/\d/',
                     'regex:/[@$!%*#?&]/',
                 ],
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             ]);
 
         } catch (\Illuminate\Validation\ValidationException $e) {
             return back()->withErrors($e->errors())->withInput();
         }
 
-        $user = User::create([
-            'name'      => $request->name,
-            'email'   => $request->email,
-            'password'       => Hash::make($request->password) ,
-        ]);
+        $userData = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ];
+
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('user_images', 'public');
+            $userData['image'] = $imagePath;
+        }
+        
+        $user = User::create($userData);
 
         if (!$user) {
             return back()->with('error', 'Failed to create user. Please try again.')->withInput();
         }
 
-        return redirect()->route('users.index')->with('success', 'user created successfully.');
+        return redirect()->route('users.index')->with('success', 'User created successfully.');
     }
 
     /**
@@ -95,7 +104,17 @@ class UserController extends Controller
                 'max:255',
                 \Illuminate\Validation\Rule::unique('users')->ignore($user->id),
             ],
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
+
+        if ($request->hasFile('image')) {
+
+            if ($user->image) {
+                Storage::disk('public')->delete($user->image);
+            }
+            $imagePath = $request->file('image')->store('user_images', 'public');
+            $validated['image'] = $imagePath;
+        }
 
         $user->update($validated);
 

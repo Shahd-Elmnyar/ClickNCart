@@ -13,6 +13,7 @@ class Message extends Model
         'user_id', 'content', 'title',
     ];
 
+
     public function user()
     {
         return $this->belongsTo(User::class);

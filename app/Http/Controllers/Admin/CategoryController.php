@@ -40,17 +40,17 @@ class CategoryController extends Controller
         } catch (\Illuminate\Validation\ValidationException $e) {
             return back()->withErrors($e->errors())->withInput();
         }
-
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('category_images');
-
+            $imagePath = $request->file('image')->store('category_images', 'public');
+            
             if (!$imagePath) {
                 return back()->with('error', 'Failed to upload image. Please try again.')->withInput();
             }
         } else {
             return back()->with('error', 'Image file is required.')->withInput();
         }
-
+        
+        //  dd($request->content);
         $category = Category::create([
             'name'      => $request->name,
             'content'   => $request->content,
@@ -105,7 +105,7 @@ class CategoryController extends Controller
             }
 
             // Store new image
-            $imagePath = $request->file('image')->store('category_images');
+            $imagePath = $request->file('image')->store('category_images', 'public');
             $category->img = $imagePath;
         }
 

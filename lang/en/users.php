@@ -22,4 +22,6 @@ return [
     'restore' => 'Restore',
     'delete_permanently' => 'Delete Permanently',
     'confirm_permanent_delete' => 'Are you sure you want to permanently delete this user? This action cannot be undone.',
+    'password' => 'Password',
+    'password_confirmation' => 'Password Confirmation',
 ];

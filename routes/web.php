@@ -39,7 +39,7 @@ Route::middleware('lang')->group(function () {
         Route::view('about', 'website.about');
         Route::view('checkout','website.checkout');
         // Route::view('/shop-single', 'website.shop-single');
-        Route::get('/product/{id}', [ProductController::class, 'show']);
+        Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.show');
         Route::view('/cart','website.cart');
         Route::view('','website.index');
         Route::get('',[HomeController::class, 'index']);

@@ -22,9 +22,18 @@
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="content" class="col-sm-2 col-form-label">{{ __('users.email') }}</label>
+                        <label for="email" class="col-sm-2 col-form-label">{{ __('users.email') }}</label>
                         <div class="col-sm-10">
-                            <input class="form-control" name="email" id="email" required value=" {{$user->email }}"">
+                            <input type="email" class="form-control" name="email" id="email" required value="{{ $user->email }}">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="image" class="col-sm-2 col-form-label">{{ __('users.image') }}</label>
+                        <div class="col-sm-10">
+                            <input type="file" class="form-control" name="image" id="image">
+                            @if($user->image)
+                                <img src="{{ asset('storage/' . $user->image) }}" alt="User Image" class="mt-2" style="max-width: 200px;">
+                            @endif
                         </div>
                     </div>
                     <div class="row mb-3">

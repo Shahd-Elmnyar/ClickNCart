@@ -20,7 +20,7 @@
                             <!-- Add Category Button -->
                             <div class="d-flex justify-content-end">
                             </div>
-                            @include('messages.success')
+                            {{-- @include('messages.success') --}}
                             <!-- Table with stripped rows -->
                             <table class="table ">
                                 <thead>

@@ -22,4 +22,6 @@ return [
     'restore' => 'استعادة',
     'delete_permanently' => 'حذف نهائي',
     'confirm_permanent_delete' => 'هل أنت متأكد أنك تريد حذف هذا المستخدم نهائيًا؟ لا يمكن التراجع عن هذا الإجراء.',
+    'password' => 'كلمة السر',
+    'password_confirmation' => 'تأكيد كلمة السر',
 ];

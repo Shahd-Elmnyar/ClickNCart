@@ -23,27 +23,29 @@
                     <div class="row mb-3">
                         <label for="email" class="col-sm-2 col-form-label">{{ __('users.email') }}</label>
                         <div class="col-sm-10">
-                            <input class="form-control" name="email" id="email" required></input>
+                            <input type="email" class="form-control" name="email" id="email" required>
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="email" class="col-sm-2 col-form-label">{{ __('users.email') }}</label>
+                        <label for="password" class="col-sm-2 col-form-label">{{ __('users.password') }}</label>
                         <div class="col-sm-10">
-
                             <input type="password" name="password" class="form-control" id="yourPassword" required>
-                            
                         </div>
                     </div>         
                     <div class="row mb-3">
-                        <label for="email" class="col-sm-2 col-form-label">{{ __('users.email') }}</label>
+                        <label for="password_confirmation" class="col-sm-2 col-form-label">{{ __('users.password_confirmation') }}</label>
                         <div class="col-sm-10">
-
                             <input type="password" name="password_confirmation" class="form-control" id="yourPasswordConfirmation" required>
-                            
                         </div>
-                    </div>         
+                    </div>
                     <div class="row mb-3">
+                        <label for="image" class="col-sm-2 col-form-label">{{ __('users.image') }}</label>
                         <div class="col-sm-10">
+                            <input type="file" class="form-control" name="image" id="image">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-10 offset-sm-2">
                             <button type="submit" class="btn btn-primary">{{ __('users.create_user') }}</button>
                             <a href="{{ route('users.index') }}" class="btn btn-secondary">{{ __('users.back') }}</a>
                         </div>
