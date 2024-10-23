@@ -1,7 +1,7 @@
 @extends('website.layout')
 @section('title', $product->name[auth()->check() ? auth()->user()->locale : 'en'] ?? $product->name['en'] )
 @section('content')
-@include('website.components.breadcrumb', ['pageName' => $product->name[auth()->check() ? auth()->user()->locale : 'en'] ?? $product->name['en']])
+@include('website.components.breadcrumb', ['pageName' => 'products'])
 
 <div class="site-section">
     <div class="container">
