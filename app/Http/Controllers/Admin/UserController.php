@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Role;
 
 class UserController extends Controller
 {
@@ -162,5 +163,16 @@ class UserController extends Controller
         $user->forceDelete();
 
         return redirect()->route('users.trashed')->with('success', 'user permanently deleted.');
+    }
+
+    public function changeRole($id, $role)
+    {
+        $user = User::findOrFail($id);
+        $newRole = Role::where('name', $role)->firstOrFail();
+        
+        $user->role_id = $newRole->id;
+        $user->save();
+
+        return redirect()->route('users.index')->with('success', "User role changed to {$role} successfully.");
     }
 }

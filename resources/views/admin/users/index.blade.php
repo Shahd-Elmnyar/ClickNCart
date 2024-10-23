@@ -32,6 +32,7 @@
                                         <th>{{ __('users.name') }}</th>
                                         <th>{{ __('users.email') }}</th>
                                         <th>{{ __('users.language') }}</th>
+                                        <th>{{ __('users.role') }}</th>
                                         <th>{{ __('users.action') }}</th>
                                     </tr>
                                 </thead>
@@ -41,19 +42,27 @@
                                             <td>{{ $user->id }}</td>
                                             <td>{{ $user->name }}</td>
                                             <td>{{ $user->email }}</td>
+                                            <td>{{ $user->locale }}</td>
+                                            <td>{{ $user->role->name }}</td>
                                             <td>
-                                                {{$user->locale}}
-                                            </td>
-                                            <td>
-                                                <a href="{{ url("admin/users/$user->id/edit") }}"
-                                                    class="btn btn-primary">{{ svg('bi-pencil-square') }}</a>
-                                                {{-- <a href="{{ url("admin/users/$user->id") }}"
-                                                    class="btn btn-info">{{ svg('bi-eye-fill') }}</a> --}}
-                                                <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display: inline-block;">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('{{ __('users.confirm_trash') }}')">{{ __('users.trash') }}</button>
-                                                </form>
+                                                <div class="btn-group">
+                                                    <a href="{{ url("admin/users/$user->id/edit") }}" class="btn btn-primary btn-sm">{{ svg('bi-pencil-square') }}</a>
+                                                    <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        Change Role
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        @foreach(['user', 'admin', 'super_admin'] as $role)
+                                                            @if($user->role->name !== $role)
+                                                                <li>
+                                                                    <form action="{{ route('users.change-role', ['id' => $user->id, 'role' => $role]) }}" method="POST">
+                                                                        @csrf
+                                                                        <button type="submit" class="dropdown-item">Make {{ ucfirst($role) }}</button>
+                                                                    </form>
+                                                                </li>
+                                                            @endif
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -71,4 +80,3 @@
     </main><!-- End #main -->
 
 @endsection
-
