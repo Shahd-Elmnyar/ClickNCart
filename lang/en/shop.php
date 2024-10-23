@@ -41,4 +41,5 @@ return [
     'green' => 'Green',
     'blue' => 'Blue',
     'purple' => 'Purple',
+    'apply_filters' => 'Apply Filters',
 ];

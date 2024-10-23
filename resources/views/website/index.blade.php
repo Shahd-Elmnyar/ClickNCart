@@ -25,9 +25,8 @@
             <div class="col-md-5 text-center text-md-left pt-5 pt-md-0">
                 <h1 class="mb-2">CLickNCard</h1>
                 <div class="intro-text text-center text-md-left">
-                    <p class="mb-4">🛍️ A Wide Variety of Products
-                        Whether you’re looking for the latest gadgets or the trendiest outfits, we have it all! With thousands of products from top vendors, finding exactly what you need has never been easier.
-                        
+                    <p class="mb-4">
+                        🛍️{{__('home.description') }} 
                     <p>
                         <a  href="{{url('shops')}}" class="btn btn-sm btn-primary">{{ __('home.shop_now') }}</a>
                     </p>

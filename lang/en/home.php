@@ -61,4 +61,6 @@ return [
     'success_completed' => 'Your order completed successfully!',
     'no_wishlist'  => 'There is no items in your wishlist',
     'add_wishlist' => 'Add to your wishlist.',
+    'description' => 'A Wide Variety of Products
+                        Whether you’re looking for the latest gadgets or the trendiest outfits, we have it all! With thousands of products from top vendors, finding exactly what you need has never been easier.',
 ];

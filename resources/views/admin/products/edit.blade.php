@@ -86,7 +86,7 @@
                                     <input class="form-check-input" type="checkbox" name="sizes[]" value="{{ $size->id }}" id="size_{{ $size->id }}"
                                         {{ (is_array(old('sizes')) && in_array($size->id, old('sizes'))) || $product->sizes->contains($size->id) ? 'checked' : '' }}>
                                     <label class="form-check-label" for="size_{{ $size->id }}">
-                                        {{ $size->name[auth()->check() ? auth()->user()->locale : 'en'] ?? $size->name['en'] }}
+                                        {{ $size->name }}
                                     </label>
                                 </div>
                             @endforeach

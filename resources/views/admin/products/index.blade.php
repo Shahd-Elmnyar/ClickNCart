@@ -39,7 +39,7 @@
                                         <td>{{ $product->category->name ?? 'N/A' }}</td>
                                         <td>
                                             @foreach($product->sizes as $size)
-                                                <span class="badge bg-primary">{{ $size->name[auth()->check() ? auth()->user()->locale : 'en'] ?? $size->name['en'] }}</span>
+                                                <span class="badge bg-primary">{{ $size->name }}</span>
                                             @endforeach
                                         </td>
                                         <td>{{ $product->active ? 'Yes' : 'No' }}</td>

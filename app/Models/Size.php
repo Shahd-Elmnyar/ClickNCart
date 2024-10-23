@@ -12,7 +12,6 @@ class Size extends Model
     protected $fillable = ['name', 'active'];
 
     protected $casts = [
-        'name' => 'array',
         'active' => 'boolean',
     ];
 

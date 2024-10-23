@@ -2,7 +2,7 @@
 @section('title', 'Shop')
 @section('content')
     @include('website.components.breadcrumb', ['pageName' => 'shop'])
-    
+
     <div class="site-section">
         <div class="container">
             <div class="row mb-5">
@@ -35,14 +35,28 @@
                             <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
                                 <div class="block-4 text-center border">
                                     <figure class="block-4-image">
-                                        <a href="{{ route('products.show', $product->id) }}">
-                                            <img src="{{ asset('storage/' . $product->img) }}" alt="{{ $product->name[auth()->check() ? auth()->user()->locale : 'en'] ?? $product->name['en'] }}" class="img-fluid">
-                                        </a>
+                                        @if ($product->img)
+                                            <img src="{{ asset('storage/' . $product->img) }}"
+                                                 alt="{{ $product->name[auth()->check() ? auth()->user()->locale : 'en'] ?? $product->name['en'] }}"
+                                                 class="img-fluid"
+                                                 style="width: 300px; height: 300px; object-fit: cover;">
+                                        @else
+                                            <div style="width: 300px; height: 300px; background-color: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+                                                No image
+                                            </div>
+                                        @endif
                                     </figure>
                                     <div class="block-4-text p-4">
-                                        <h3><a href="{{ route('products.show', $product->id) }}">{{ $product->name[auth()->check() ? auth()->user()->locale : 'en'] ?? $product->name['en'] }}</a></h3>
+                                        <h3><a href="{{ route('product.show', $product->id) }}">{{ $product->name[auth()->check() ? auth()->user()->locale : 'en'] ?? $product->name['en'] }}</a></h3>
                                         <p class="mb-0">{{ Str::limit($product->content[auth()->check() ? auth()->user()->locale : 'en']??$product->content['en'], 50) }}</p>
-                                        <p class="text-primary font-weight-bold">${{ $product->price }}</p>
+                                        @if($product->offer_price && $product->offer_price < $product->price)
+                                        <p class="mb-0">
+                                            <span class="text-muted text-decoration-line-through" style=" margin-top: 10px; font-size:0.8em;  text-decoration: line-through;  color:grey;">${{ number_format($product->price, 2) }}</span>
+                                            <span class="text-danger fw-bold ms-2">${{ number_format($product->offer_price, 2) }}</span>
+                                        </p>
+                                    @else
+                                        <p class="text-success fw-bold mb-0" style=" margin-top: 10px; font-size:0.8em;  text-decoration: line-through;  color:grey;">${{ number_format($product->price, 2) }}</p>
+                                    @endif
                                         <form action="{{ route('wishlist.add', $product->id) }}" method="POST" class="d-inline">
                                             @csrf
                                             <button type="submit" class="btn btn-sm btn-outline-primary">
@@ -89,10 +103,10 @@
 
                         <div class="mb-4">
                             <h3 class="mb-3 h6 text-uppercase text-black d-block">{{ __('shop.size') }}</h3>
-                            @foreach(['small', 'medium', 'large'] as $size)
-                                <label for="s_{{ $size }}" class="d-flex">
-                                    <input type="checkbox" id="s_{{ $size }}" name="sizes[]" value="{{ $size }}" class="mr-2 mt-1">
-                                    <span class="text-black">{{ __('shop.' . $size) }}</span>
+                            @foreach($sizes as $size)
+                                <label for="s_{{ $size->id }}" class="d-flex">
+                                    <input type="checkbox" id="s_{{ $size->id }}" name="sizes[]" value="{{ $size->name }}" class="mr-2 mt-1">
+                                    <span class="text-black">{{ $size->name }}</span>
                                 </label>
                             @endforeach
                         </div>
@@ -127,12 +141,12 @@
 <script>
     $(document).ready(function() {
         var minPrice = {{ request('min_price', 0) }};
-        var maxPrice = {{ request('max_price', 1000) }};
+        var maxPrice = {{ request('max_price', 5000) }};
 
         $("#slider-range").slider({
             range: true,
             min: 0,
-            max: 1000,
+            max: 5000,
             values: [minPrice, maxPrice],
             slide: function(event, ui) {
                 $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);

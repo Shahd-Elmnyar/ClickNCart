@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\website;
 
-use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\Size;
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ShopController extends Controller
 {
@@ -58,57 +59,9 @@ class ShopController extends Controller
 
         $products = $query->paginate(9)->appends($request->query());
         $categories = Category::withCount('products')->get();
+        $sizes = Size::all();
 
-        return view('website.shop', compact('products', 'categories'));
+        return view('website.shop', compact('products', 'categories', 'sizes'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(int $id)
-    {
-        //
-        $product = Product::find($id);
-        return view('website.shop-single', compact('product'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

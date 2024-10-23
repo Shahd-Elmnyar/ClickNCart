@@ -41,4 +41,5 @@ return [
     'green' => 'أخضر',
     'blue' => 'أزرق',
     'purple' => 'بنفسجي',
+    'apply_filters' => 'تطبيق الفلتر',
 ];

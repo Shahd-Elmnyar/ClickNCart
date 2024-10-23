@@ -53,7 +53,7 @@
                 <div class="block-38 text-center">
                     <div class="block-38-img">
                         <div class="block-38-header">
-                            <img src={{ asset('assets/images/person_2.jpg')}} alt="@lang('about.image_placeholder')" class="mb-4">
+                            <img src={{ asset('assets/images/nada.jpg')}} alt="@lang('about.image_placeholder')" class="mb-4">
                             <h3 class="block-38-heading h4">Nada Reda Fathy Refaey</h3>
                             <p class="block-38-subheading">Backend developer</p>
                         </div>
@@ -67,7 +67,7 @@
                 <div class="block-38 text-center">
                     <div class="block-38-img">
                         <div class="block-38-header">
-                            <img src={{ asset('assets/images/person_3.jpg')}} alt="@lang('about.image_placeholder')" class="mb-4">
+                            <img src={{ asset('assets/images/yasmin.jpg')}} alt="@lang('about.image_placeholder')" class="mb-4">
                             <h3 class="block-38-heading h4">Yasmin hasan kamal</h3>
                             <p class="block-38-subheading">Backend developer</p>
                         </div>
@@ -81,7 +81,7 @@
                 <div class="block-38 text-center">
                     <div class="block-38-img">
                         <div class="block-38-header">
-                            <img src={{ asset('assets/images/person_4.jpg')}} alt="@lang('about.image_placeholder')" class="mb-4">
+                            <img src={{ asset('assets/images/hager.jpg')}} alt="@lang('about.image_placeholder')" class="mb-4">
                             <h3 class="block-38-heading h4">Hager Khaled sahm</h3>
                             <p class="block-38-subheading">Backend developer</p>
                         </div>
