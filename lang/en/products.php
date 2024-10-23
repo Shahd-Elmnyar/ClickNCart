@@ -43,4 +43,5 @@ return [
     'perfect_products' => 'Finding perfect products',
     'polo_shirt' => 'Polo Shirt',
     'tshirt_mockup' => 'T-Shirt Mockup',
+    'product_details' => 'Product Details',
 ];
