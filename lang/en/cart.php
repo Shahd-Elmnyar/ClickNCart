@@ -17,4 +17,5 @@ return [
     'proceed_to_checkout' => 'Proceed To Checkout',
     'top_up_t_shirt' => 'Top Up T-Shirt',
     'polo_shirt' => 'Polo Shirt',
+    'update' => 'Update',
 ];

@@ -44,7 +44,7 @@
                                             <button class="btn btn-outline-primary btn-sm" type="submit">{{ __('cart.update') }}</button>
                                         </form>
                                     </td>
-                                    <td>${{ $item->total }}</td>
+                                    <td>${{ $item->price * $item->quantity }}</td>
                                     <td>
                                         <form action="{{ route('cart.remove', $item->id) }}" method="POST">
                                             @csrf
@@ -73,7 +73,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    {{-- <div class="col-md-12">
                         <label class="text-black h4" for="coupon">{{ __('cart.coupon') }}</label>
                         <p>{{ __('cart.coupon_instruction') }}</p>
                     </div>
@@ -82,7 +82,7 @@
                     </div>
                     <div class="col-md-4">
                         <button class="btn btn-primary btn-sm">{{ __('cart.apply_coupon') }}</button>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <div class="col-md-6 pl-5">
@@ -114,7 +114,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <button class="btn btn-primary btn-lg py-3 btn-block" onclick="window.location='checkout.html'">{{ __('cart.proceed_to_checkout') }}</button>
+                                <button class="btn btn-primary btn-lg py-3 btn-block" onclick="window.location='#'">{{ __('cart.proceed_to_checkout') }}</button>
                             </div>
                         </div>
                     </div>

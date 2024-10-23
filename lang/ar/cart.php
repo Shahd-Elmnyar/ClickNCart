@@ -17,4 +17,5 @@ return [
     'proceed_to_checkout' => 'المتابعة إلى الدفع',
     'top_up_t_shirt' => 'تي شيرت توب أب',
     'polo_shirt' => 'قميص بولو',
+    'update' => 'تحديث',
 ];

@@ -12,7 +12,14 @@
         <div class="col-md-6">
             <h2 class="text-black">{{ $product->name[auth()->check() ? auth()->user()->locale : 'en'] ?? $product->name['en'] }}</h2>
             <p>{{ $product->content[auth()->check() ? auth()->user()->locale : 'en'] ?? $product->content['en'] }}</p>
-            <p><strong class="text-primary h4">${{ $product->price }}</strong></p>
+            @if($product->offer_price && $product->offer_price < $product->price)
+                                        <p class="mb-0">
+                                            <span class="text-muted text-decoration-line-through" style=" margin-top: 10px; font-size:0.8em;  text-decoration: line-through;  color:grey;">${{ number_format($product->price, 2) }}</span>
+                                            <span class="text-danger fw-bold ms-2">${{ number_format($product->offer_price, 2) }}</span>
+                                        </p>
+                                    @else
+                                        <p class="text-success fw-bold mb-0" style=" margin-top: 10px; font-size:0.8em;  text-decoration: line-through;  color:grey;">${{ number_format($product->price, 2) }}</p>
+                                    @endif
             
             <div class="mb-5">
                 <div class="input-group mb-3" style="max-width: 120px;">
