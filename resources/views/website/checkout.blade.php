@@ -6,11 +6,11 @@
     <div class="site-section">
         <div class="container">
             <div class="row mb-5">
-                <div class="col-md-12">
+                {{-- <div class="col-md-12">
                     <div class="border p-4 rounded" role="alert">
                         Returning customer? <a href="#">Click here</a> to login
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="row">
                 <div class="col-md-6 mb-5 mb-md-0">
@@ -214,7 +214,7 @@
                 </div>
                 <div class="col-md-6">
 
-                    <div class="row mb-5">
+                    {{-- <div class="row mb-5">
                         <div class="col-md-12">
                             <h2 class="h3 mb-3 text-black">Coupon Code</h2>
                             <div class="p-3 p-lg-5 border">
@@ -232,7 +232,7 @@
 
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="row mb-5">
                         <div class="col-md-12">

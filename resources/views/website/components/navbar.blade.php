@@ -31,7 +31,7 @@
                                         @endguest
                                         @auth
                                         <a class="dropdown-item" href="{{ url('profile') }}">{{Auth::user()->name}}</a>
-                                        @if(Auth::user()->role != 'user')
+                                        @if(Auth::user()->role->name != 'user')
                                         <a class="dropdown-item" href="{{ url('admin') }}">{{ __('navbar.dashboard') }}</a>
                                         @endif
                                         <!-- <a class="dropdown-item" href="{{ url('logout') }}">Logout</a> -->

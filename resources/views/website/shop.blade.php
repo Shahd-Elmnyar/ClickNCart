@@ -72,11 +72,6 @@
                             </div>
                         @endforeach
                     </div>
-                    <div class="row" data-aos="fade-up">
-                        <div class="col-md-12 text-center">
-                            {{ $products->links() }}
-                        </div>
-                    </div>
                 </div>
 
                 <div class="col-md-3 order-1 mb-5 mb-md-0">
