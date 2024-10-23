@@ -13,13 +13,13 @@
             <h2 class="text-black">{{ $product->name[auth()->check() ? auth()->user()->locale : 'en'] ?? $product->name['en'] }}</h2>
             <p>{{ $product->content[auth()->check() ? auth()->user()->locale : 'en'] ?? $product->content['en'] }}</p>
             @if($product->offer_price && $product->offer_price < $product->price)
-                                        <p class="mb-0">
-                                            <span class="text-muted text-decoration-line-through" style=" margin-top: 10px; font-size:0.8em;  text-decoration: line-through;  color:grey;">${{ number_format($product->price, 2) }}</span>
-                                            <span class="text-danger fw-bold ms-2">${{ number_format($product->offer_price, 2) }}</span>
-                                        </p>
-                                    @else
-                                        <p class="text-success fw-bold mb-0" style=" margin-top: 10px; font-size:0.8em;  text-decoration: line-through;  color:grey;">${{ number_format($product->price, 2) }}</p>
-                                    @endif
+            <p class="mb-0">
+                <span class="text-muted text-decoration-line-through" style=" margin-top: 10px; font-size:0.8em;  text-decoration: line-through;  color:grey;">${{ number_format($product->price, 2) }}</span>
+                <span class="text-danger fw-bold ms-2">${{ number_format($product->offer_price, 2) }}</span>
+            </p>
+            @else
+                <p class="text-success fw-bold mb-0" style=" margin-top: 10px; font-size:0.8em;  text-decoration: line-through;  color:grey;">${{ number_format($product->price, 2) }}</p>
+            @endif
             
             <div class="mb-5">
                 <div class="input-group mb-3" style="max-width: 120px;">
@@ -61,13 +61,15 @@
         console.log('DOM Content Loaded');
         console.log('Add to Cart Button:', addToCartBtn);
 
-        minusBtn.addEventListener('click', function() {
+        minusBtn.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default button behavior
             if (quantityInput.value > 1) {
                 quantityInput.value = parseInt(quantityInput.value) - 1;
             }
         });
 
-        plusBtn.addEventListener('click', function() {
+        plusBtn.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default button behavior
             quantityInput.value = parseInt(quantityInput.value) + 1;
         });
 
